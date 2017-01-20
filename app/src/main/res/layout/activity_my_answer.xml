@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.popdq.app.ui.MyQuestionActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_with_button"></include>
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"></RelativeLayout>
+    <!--<include-->
+    <!--layout="@layout/layout_list_and_search"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_below="@+id/toolbar"></include>-->
+
+    <!--<include-->
+    <!--android:id="@+id/bottom"-->
+    <!--layout="@layout/bottom_layout_with_button"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"></include>-->
+
+
+</RelativeLayout>

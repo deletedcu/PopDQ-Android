@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:background="@color/button_cooking_static"
+    android:paddingBottom="@dimen/padding_editext">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgAvatar"
+        android:layout_width="@dimen/avatar_list_question"
+        android:layout_height="@dimen/avatar_list_question"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:src="@drawable/list_avatar"
+        app:civ_border_color="@color/border_color"
+        app:civ_border_width="@dimen/border_avatar" />
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/imgAvatar">
+
+        <com.popdq.app.view.textview.TextViewNormal
+            android:id="@+id/tvNameAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How to add friend?"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/textsize_normal"
+            android:textStyle="bold" />
+
+        <com.popdq.app.view.textview.TextViewNormal
+            android:id="@+id/tvCountFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="28 Replies"
+            android:textSize="@dimen/textsize_small" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true">
+
+        <ImageView
+            android:id="@+id/imgStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:src="@drawable/add_to_favorite_favlist_added_icon"
+            android:text="@string/help"
+            android:textColor="@drawable/text_color_login" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/main_devider"></View>
+
+</RelativeLayout>

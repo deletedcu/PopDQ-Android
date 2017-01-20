@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="?attr/actionBarSize"
+    android:gravity="center_horizontal"
+    android:layout_marginBottom="@dimen/magrin_tab_bottom"
+    android:layout_height="?attr/actionBarSize">
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/size_tab_icon"
+            android:layout_height="@dimen/size_tab_icon"
+            android:background="@drawable/icon_tab_explore" />
+
+        <com.popdq.app.view.textview.TextViewThin
+            android:id="@+id/tvNameAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Explore"
+            android:textColor="@drawable/text_color_tab"
+            android:textSize="@dimen/textsize_small_x" />
+
+
+    </LinearLayout>
+</RelativeLayout>

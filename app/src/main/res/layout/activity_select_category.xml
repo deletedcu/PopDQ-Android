@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.popdq.app.ui.MyInterestActivity">
+
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/toolbar_with_button"></include>
+
+
+    <ListView
+        android:id="@+id/listInterest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom"
+        android:layout_below="@+id/toolbar1"></ListView>
+
+
+</RelativeLayout>

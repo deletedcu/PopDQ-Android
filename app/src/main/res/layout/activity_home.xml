@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- The main content view -->
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.popdq.app.ui.HomeActivity">
+
+
+        <include
+            android:id="@+id/toolbar1"
+            layout="@layout/toolbar_home"></include>
+
+        <RelativeLayout
+            android:id="@+id/content"
+            android:layout_below="@+id/toolbar1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></RelativeLayout>
+
+        <!--<include-->
+            <!--layout="@layout/layout_list_and_search"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_below="@+id/toolbar1"></include>-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/bottom"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true">-->
+
+            <!--<include-->
+                <!--layout="@layout/bottom_layout_with_button"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"></include>-->
+        <!--</LinearLayout>-->
+
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/left_drawer"
+        layout="@layout/layout_navigation"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"></include>
+</android.support.v4.widget.DrawerLayout>
+
+

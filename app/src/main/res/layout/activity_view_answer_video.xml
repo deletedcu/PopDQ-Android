@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/lToolbar"
+            layout="@layout/toolbar_with_button"></include>
+
+        <include
+            android:id="@+id/bottom"
+            layout="@layout/layout_bottom_view_answer_voice_or_video"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"></include>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottom"
+            android:layout_below="@+id/lToolbar"
+            android:gravity="center">
+
+            <VideoView
+                android:layout_margin="2dp"
+                android:id="@+id/videoView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutVideoFull"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/main_login"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:visibility="gone">
+
+            <com.afollestad.easyvideoplayer.EasyVideoPlayer
+                android:id="@+id/videoViewFull"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:id="@+id/rotate"
+                android:layout_width="@dimen/size_icon_method_normal"
+                android:layout_height="@dimen/size_icon_method_normal"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:src="@drawable/ic_rotate" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,24 @@
+<RelativeLayout android:id="@+id/toolbar1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"></include>
+
+    <RelativeLayout
+        android:id="@+id/btnMenu"
+        android:layout_width="?android:attr/actionBarSize"
+        android:layout_height="?android:attr/actionBarSize">
+
+
+        <ImageView
+            android:id="@+id/iconNavigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/btn_toogle" />
+    </RelativeLayout>
+
+</RelativeLayout>

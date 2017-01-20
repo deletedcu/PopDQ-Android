@@ -1,0 +1,26 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/option"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/logo"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.popdq.app.view.textview.TextViewNormal
+        android:id="@+id/optionName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginTop="@dimen/magrin_top_option_name"
+        android:text="OPTION NAME"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/textsize_login_option"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:background="@color/button_cooking_press"></View>
+</LinearLayout>

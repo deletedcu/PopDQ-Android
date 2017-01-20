@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    android:background="#00000000"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_convert_credit"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize">
+
+            <com.popdq.app.view.textview.TextViewNormal
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="?android:attr/actionBarSize"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+
+                android:text="@string/report_title"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/textsize_large"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/main_login"></View>
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/edtContenReport"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/heigh_content_input"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            android:background="@drawable/bg_descripion"
+            android:gravity="top"
+            android:textSize="@dimen/textsize_normal"
+            android:hint="@string/hint_report"
+            android:padding="@dimen/activity_vertical_margin"
+            android:textColor="@color/colorPrimary" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:orientation="horizontal">
+
+            <Button
+android:textSize="@dimen/textsize_normal"
+                android:id="@+id/btnCancel"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_button_login_input"
+                android:layout_above="@+id/bottom"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:layout_weight="1"
+                android:background="@drawable/bg_signup"
+                android:text="@string/cancel"
+                android:textColor="@drawable/text_color_sign_up"
+                 />
+
+            <Button
+                android:textSize="@dimen/textsize_normal"
+                android:id="@+id/btnOk"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_button_login_input"
+                android:layout_above="@+id/bottom"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:layout_weight="1"
+                android:background="@drawable/bg_login"
+                android:text="@string/report"
+                android:textColor="@drawable/text_color_login"
+           />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

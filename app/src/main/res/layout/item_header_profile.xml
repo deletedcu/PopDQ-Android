@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/main_login">
+
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/toolbar_with_button"></include>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_profile_expert_title">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/height_profile_expert_title"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@color/colorPrimary"></LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"></LinearLayout>
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:layout_width="@dimen/height_profile_expert_avatar"
+                            android:layout_height="@dimen/height_profile_expert_avatar"
+                            android:layout_centerInParent="true">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/imgAvatar"
+                                android:layout_width="@dimen/height_profile_expert_avatar"
+                                android:layout_height="@dimen/height_profile_expert_avatar"
+
+                                android:src="@drawable/profile_information_avatar"
+                                app:civ_border_color="@color/border_color"
+                                app:civ_border_width="@dimen/border_avatar" />
+
+                            <ImageView
+                                android:id="@+id/imgVerified"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                                android:layout_marginRight="@dimen/activity_vertical_margin"
+                                android:src="@drawable/ic_verified" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <com.popdq.app.view.textview.TextViewBold
+                        android:id="@+id/tvNameAnswer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text=""
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textsize_large" />
+
+                    <ImageView
+                        android:id="@+id/imgFollow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:src="@drawable/ic_follow"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/activity_vertical_margin">
+
+                        <com.popdq.app.view.textview.TextViewThin
+                            android:id="@+id/tvFollowers"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/textsize_small" />
+
+                        <com.popdq.app.view.textview.TextViewThin
+                            android:id="@+id/tvFollowing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/activity_vertical_margin"
+                            android:text=""
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/textsize_small" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:gravity="center">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="@dimen/ic_menu_size"
+                                android:layout_height="@dimen/ic_menu_size"
+                                android:src="@drawable/text" />
+
+                            <com.popdq.app.view.textview.TextViewThin
+                                android:id="@+id/tvTextPrice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                                android:text="$9.99"
+                                android:textColor="@color/text_solved_static"
+                                android:textSize="@dimen/textsize_small" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="@dimen/ic_menu_size"
+                                android:layout_height="@dimen/ic_menu_size"
+                                android:src="@drawable/voice" />
+
+                            <com.popdq.app.view.textview.TextViewThin
+                                android:id="@+id/tvVoicePrice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                                android:text="$9.99"
+                                android:textColor="@color/text_solved_static"
+                                android:textSize="@dimen/textsize_small" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="@dimen/ic_menu_size"
+                                android:layout_height="@dimen/ic_menu_size"
+                                android:src="@drawable/video" />
+
+                            <com.popdq.app.view.textview.TextViewThin
+                                android:id="@+id/tvVideoPrice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                                android:text="$9.99"
+                                android:textColor="@color/text_solved_static"
+                                android:textSize="@dimen/textsize_small" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_margin="@dimen/activity_vertical_margin"
+                        android:background="@color/text_solved_static"></View>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/activity_horizontal_margin">
+
+                        <com.popdq.app.view.textview.TextViewNormal
+                            android:id="@+id/tvProfesstion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ellipsize="marquee"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:freezesText="true"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text="No information"
+                            android:textColor="@color/text_solved_static"
+                            android:textSize="@dimen/textsize_normal" />
+
+                        <com.popdq.app.view.textview.TextViewNormal
+                            android:id="@+id/tvLocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_weight="1"
+                            android:ellipsize="marquee"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:freezesText="true"
+                            android:gravity="right"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text="No information"
+                            android:textColor="@color/text_solved_static"
+                            android:textSize="@dimen/textsize_normal" />
+
+                    </LinearLayout>
+                    <com.popdq.app.view.textview.TextViewNormal
+                        android:id="@+id/tvDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/activity_horizontal_margin"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin"
+                        android:scrollbars="vertical"
+                        android:text="No information"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textsize_normal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:padding="@dimen/activity_vertical_margin">
+
+                    <com.popdq.app.view.textview.TextViewNormal
+                        android:id="@+id/tvTitleListQuestion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/my_answerd_question"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textsize_normal"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnAsk"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_button_bottom"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/button_pop_a_question"
+        android:text="@string/pop_me_a_question"
+        android:textColor="@color/white"
+        android:visibility="gone" />
+</RelativeLayout>

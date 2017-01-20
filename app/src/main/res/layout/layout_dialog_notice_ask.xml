@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="@dimen/activity_horizontal_margin"
+    android:layout_height="wrap_content"
+    android:background="#00000000"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_convert_credit"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize">
+
+            <com.popdq.app.view.textview.TextViewNormal
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+
+                android:text="@string/report_title"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/textsize_large"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/main_login"></View>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <com.popdq.app.view.textview.TextViewNormal
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/total_credits"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/textsize_normal" />
+
+            <com.popdq.app.view.textview.TextViewNormal
+                android:id="@+id/tvTotalCredit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                android:text="$15"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/textsize_normal" />
+        </LinearLayout>
+
+        <com.popdq.app.view.textview.TextViewNormal
+            android:id="@+id/tvMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_horizontal_margin"
+            android:text="message"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/textsize_normal" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_button_login_input"
+                android:layout_above="@+id/bottom"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:layout_weight="1"
+                android:background="@drawable/bg_signup"
+                android:text="@string/cancel"
+                android:textColor="@drawable/text_color_sign_up"
+                android:textSize="@dimen/textsize_normal" />
+
+            <Button
+                android:id="@+id/btnOk"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_button_login_input"
+                android:layout_above="@+id/bottom"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:layout_weight="1"
+                android:background="@drawable/bg_login"
+                android:text="OK"
+                android:textColor="@drawable/text_color_login"
+                android:textSize="@dimen/textsize_normal" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

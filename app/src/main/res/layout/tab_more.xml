@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="?attr/actionBarSize"
+    android:gravity="center_horizontal"
+    android:layout_marginBottom="@dimen/magrin_tab_bottom"
+    android:layout_height="?attr/actionBarSize">
+
+    <LinearLayout
+        android:id="@+id/root"
+        android:layout_width="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/size_tab_icon"
+            android:layout_height="@dimen/size_tab_icon"
+            android:background="@drawable/icon_tab_more" />
+
+        <com.popdq.app.view.textview.TextViewThin
+            android:id="@+id/tvNameAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="More"
+
+            android:textColor="@drawable/text_color_tab"
+            android:textSize="@dimen/textsize_small_x" />
+
+    </LinearLayout>
+
+    <com.popdq.app.view.textview.TextViewNormal
+        android:id="@+id/tvCountNoti"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@drawable/bg_count_noti"
+        android:gravity="center"
+        android:minHeight="@dimen/min_size_noti_count"
+        android:minWidth="@dimen/min_size_noti_count"
+        android:padding="3dp"
+        android:text="20"
+        android:textColor="@color/white"
+        android:textSize="@dimen/textsize_small_x" />
+</RelativeLayout>

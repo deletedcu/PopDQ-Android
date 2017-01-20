@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/layout_list_question_feed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></include>
+
+
+        <LinearLayout
+
+            android:id="@+id/layout_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/search"
+                layout="@layout/layout_search"></include>
+
+            <RelativeLayout
+                android:id="@+id/noticeIncompleteInfo"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_below="@+id/search"
+                android:background="@color/text_solved_static"
+                android:visibility="gone">
+
+                <com.popdq.app.view.textview.TextViewThin
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_toLeftOf="@+id/btnCloseNotice"
+                    android:gravity="center"
+                    android:padding="@dimen/activity_vertical_margin"
+                    android:text="@string/notice_info_incomplete"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/textsize_small" />
+
+                <RelativeLayout
+                    android:id="@+id/btnCloseNotice"
+                    android:layout_width="?attr/actionBarSize"
+                    android:layout_height="?attr/actionBarSize"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="@dimen/textsize_large"
+                        android:layout_height="@dimen/textsize_large"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_close" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </FrameLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.popdq.app.ui.MyInterestActivity">
+
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/toolbar_with_button"></include>
+
+    <com.popdq.app.view.textview.TextViewNormal
+        android:id="@+id/des"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar1"
+        android:background="@color/main_login"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:text="@string/description_interest"
+        android:textSize="@dimen/textsize_normal" />
+
+    <ListView
+        android:id="@+id/listInterest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom"
+        android:layout_below="@+id/des"></ListView>
+
+    <include
+        android:id="@+id/bottom"
+        layout="@layout/bottom_layout_with_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"></include>
+</RelativeLayout>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/title"
+    android:background="@color/main_login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/btnNotification"
+                android:layout_width="?android:attr/actionBarSize"
+                android:layout_height="?android:attr/actionBarSize"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:padding="@dimen/activity_vertical_margin"
+                    android:src="@drawable/ic_noti" />
+
+                <com.popdq.app.view.textview.TextViewNormal
+                    android:id="@+id/tvCountNoti"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/activity_vertical_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:background="@drawable/bg_count_noti"
+                    android:gravity="center"
+                    android:minHeight="@dimen/min_size_noti_count"
+                    android:minWidth="@dimen/min_size_noti_count"
+                    android:padding="3dp"
+                    android:text="23"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_small_x" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/creditleftlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center_vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgAvatar"
+                    android:layout_width="@dimen/avatar_size_navigation"
+                    android:layout_height="@dimen/avatar_size_navigation"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:src="@drawable/chatroom_avatar"
+                    app:civ_border_color="@color/border_color"
+                    app:civ_border_width="@dimen/border_avatar" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.popdq.app.view.textview.TextViewNormal
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/earnings"
+                            android:textColor="@color/colorPrimary" />
+
+                        <com.popdq.app.view.textview.TextViewNormal
+                            android:id="@+id/tvEarnings"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="0"
+                            android:textColor="@drawable/text_color_view_all"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.popdq.app.view.textview.TextViewNormal
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/credits"
+                            android:textColor="@color/colorPrimary" />
+
+                        <com.popdq.app.view.textview.TextViewNormal
+                            android:id="@+id/tvDeposits"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:text="0"
+                            android:textColor="@drawable/text_color_view_all"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/divider_menu"></View>
+
+        <!--<com.azstack.quickanswer.view.ItemNavigationMenu-->
+        <!--android:id="@+id/btnProfile"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--custom:icon_menu="@drawable/profile_icon"-->
+        <!--custom:text="@string/profile"></com.azstack.quickanswer.view.ItemNavigationMenu>-->
+
+        <com.popdq.app.view.ItemNavigationMenu
+            android:id="@+id/btnMyQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            custom:icon_menu="@drawable/my_question_icon"
+            custom:text="@string/my_question"></com.popdq.app.view.ItemNavigationMenu>
+
+        <com.popdq.app.view.ItemNavigationMenu
+            android:id="@+id/btnMyAnswer"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            custom:icon_menu="@drawable/my_answer_icon"
+            custom:text="@string/my_answer"></com.popdq.app.view.ItemNavigationMenu>
+
+        <com.popdq.app.view.ItemNavigationMenu
+            android:id="@+id/btnMyPreView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            custom:icon_menu="@drawable/my_preview_icon"
+            custom:text="@string/my_views"></com.popdq.app.view.ItemNavigationMenu>
+
+        <com.popdq.app.view.ItemNavigationMenu
+            android:id="@+id/btnBuyCredit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:icon_menu="@drawable/buy_credits_icon"
+            custom:text="@string/buy_credit"></com.popdq.app.view.ItemNavigationMenu>
+
+
+        <com.popdq.app.view.ItemNavigationMenu
+            android:id="@+id/btnShare"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:icon_menu="@drawable/share_icon"
+            custom:text="@string/share"></com.popdq.app.view.ItemNavigationMenu>
+
+        <com.popdq.app.view.ItemNavigationMenu
+            android:id="@+id/btnMyInterest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:icon_menu="@drawable/my_interest_icon"
+            custom:text="@string/my_interest"></com.popdq.app.view.ItemNavigationMenu>
+
+        <com.popdq.app.view.ItemNavigationMenu
+            android:id="@+id/btnFavorite"
+            android:layout_width="match_parent"
+
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            custom:icon_menu="@drawable/favorite_list_icon"
+            custom:text="@string/favorite_list"></com.popdq.app.view.ItemNavigationMenu>
+
+        <com.popdq.app.view.ItemNavigationMenu
+            android:id="@+id/btnWithDraw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:icon_menu="@drawable/withdraw_icon"
+            custom:text="@string/withdraw"></com.popdq.app.view.ItemNavigationMenu>
+
+        <com.popdq.app.view.ItemNavigationMenu
+            android:id="@+id/btnTransaction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:icon_menu="@drawable/buy_credits_icon"
+            custom:text="@string/transaction"></com.popdq.app.view.ItemNavigationMenu>
+
+        <com.popdq.app.view.ItemNavigationMenu
+            android:id="@+id/btnHowWork"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            custom:icon_menu="@drawable/buy_credits_icon"
+            custom:text="@string/how_work"></com.popdq.app.view.ItemNavigationMenu>
+
+        <com.popdq.app.view.ItemNavigationMenu
+            android:id="@+id/btnContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:icon_menu="@drawable/ic_contact"
+            custom:text="@string/contact_us"></com.popdq.app.view.ItemNavigationMenu>
+
+        <com.popdq.app.view.ItemNavigationMenu
+            android:id="@+id/btnAboutPopDQ"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            custom:icon_menu="@drawable/ic_about"
+            custom:text="@string/about_popdq"></com.popdq.app.view.ItemNavigationMenu>
+
+        <com.popdq.app.view.ItemNavigationMenu
+            android:id="@+id/btnJoinExpert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:icon_menu="@drawable/profile_icon"
+            custom:text="@string/join_experts">
+
+        </com.popdq.app.view.ItemNavigationMenu>
+
+        <com.popdq.app.view.ItemNavigationMenu
+            android:id="@+id/btnLogOut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:icon_menu="@drawable/logout"
+            custom:text="@string/log_out"></com.popdq.app.view.ItemNavigationMenu>
+
+    </LinearLayout>
+</ScrollView>

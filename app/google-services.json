@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "698177898809",
+    "firebase_url": "https://popdq-145609.firebaseio.com",
+    "project_id": "popdq-145609",
+    "storage_bucket": "popdq-145609.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:698177898809:android:f67016feebfacb73",
+        "android_client_info": {
+          "package_name": "com.popdq.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "698177898809-m51d287deqgqcdbdnum2ss9egernnk9e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.popdq.app",
+            "certificate_hash": "23CDA83BA96C3843FA8FE8D566B9A92E4F6BBE0B"
+          }
+        },
+        {
+          "client_id": "698177898809-2dpblgu8uqq5rd3j9ad9pcd3og4j8l2f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.popdq.app",
+            "certificate_hash": "B3C1F76A978CC7D5C3057BDFE9224BE559CFC79C"
+          }
+        },
+        {
+          "client_id": "698177898809-pj0vpko7tp65pvcsi904npeogshnqav0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCM_oLIZgTsbf-wwCtvjDPHNntfD9-qpG8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "698177898809-pj0vpko7tp65pvcsi904npeogshnqav0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

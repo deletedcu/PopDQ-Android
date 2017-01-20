@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true">
+
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/toolbar"></include>
+
+    <RelativeLayout
+        android:id="@+id/btnEdit"
+        android:layout_width="?android:attr/actionBarSize"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_alignParentRight="true"
+        android:background="?attr/selectableItemBackground"
+        android:visibility="visible">
+
+        <com.popdq.app.view.textview.TextViewThin
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/save"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_normal" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar1">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/toolbar1"
+                android:background="@color/main_login"
+                tools:context=".ui.EditProfileActivity">
+
+                <com.popdq.app.view.VerticalScrollview
+                    android:id="@+id/scrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:descendantFocusability="beforeDescendants"
+                    android:focusableInTouchMode="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:id="@+id/avatar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/height_profile_expert_title">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:background="@color/colorPrimary"></LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"></LinearLayout>
+
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:layout_width="@dimen/height_profile_expert_avatar"
+                                android:layout_height="@dimen/height_profile_expert_avatar"
+                                android:layout_centerInParent="true">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:id="@+id/imgAvatar"
+                                    android:layout_width="@dimen/height_profile_expert_avatar"
+                                    android:layout_height="@dimen/height_profile_expert_avatar"
+
+                                    android:src="@drawable/profile_information_avatar"
+                                    app:civ_border_color="@color/border_color"
+                                    app:civ_border_width="@dimen/border_avatar" />
+
+                                <!--<ImageView-->
+                                <!--android:layout_width="@dimen/star_size"-->
+                                <!--android:layout_height="@dimen/star_size"-->
+                                <!--android:layout_alignParentBottom="true"-->
+                                <!--android:layout_alignParentRight="true"-->
+                                <!--android:layout_marginBottom="@dimen/activity_horizontal_margin"-->
+                                <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+                                <!--android:clickable="false"-->
+                                <!--android:focusable="false"-->
+                                <!--android:src="@drawable/ic_pen_black" />-->
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+
+                            android:id="@+id/option"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/avatar"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <com.popdq.app.view.textview.TextViewBold
+                                android:id="@+id/tvUserName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/activity_horizontal_margin"
+                                android:text="@string/profile_infomation"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/textsize_login_option"
+                                android:textStyle="bold" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="3dp"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                android:background="@color/button_cooking_press"></View>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/option"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                android:layout_marginTop="@dimen/activity_vertical_margin"
+                                android:background="@drawable/button_login_input"
+                                android:descendantFocusability="beforeDescendants"
+                                android:focusableInTouchMode="true"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/height_button_login_input"
+                                    android:descendantFocusability="beforeDescendants"
+                                    android:focusableInTouchMode="true"
+                                    android:orientation="horizontal">
+
+
+                                    <ImageView
+                                        android:id="@+id/imgUser"
+                                        android:layout_width="@dimen/icon_size_input"
+                                        android:layout_height="@dimen/icon_size_input"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="@dimen/padding_ic_edittext"
+                                        android:padding="3dp"
+                                        android:src="@drawable/a_user" />
+
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginBottom="5dp"
+                                        android:layout_marginTop="5dp"
+                                        android:background="@color/button_cooking_press"></View>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                        android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+                                        <EditText
+                                            android:id="@+id/edtuname"
+                                            android:layout_width="match_parent"
+
+                                            android:layout_height="match_parent"
+                                            android:background="#00000000"
+                                            android:hint="@string/username"
+                                            android:imeOptions="actionNext"
+                                            android:inputType="textCapWords"
+                                            android:maxLines="1"
+                                            android:singleLine="true"
+                                            android:textSize="@dimen/textsize_normal" />
+
+                                    </RelativeLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+
+                            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                android:layout_marginTop="@dimen/activity_vertical_margin"
+                                android:background="@drawable/button_login_input"
+                                android:descendantFocusability="beforeDescendants"
+                                android:focusableInTouchMode="true"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/height_button_login_input"
+                                    android:descendantFocusability="beforeDescendants"
+                                    android:focusableInTouchMode="true"
+                                    android:orientation="horizontal">
+
+
+                                    <ImageView
+                                        android:id="@+id/imgIcon"
+                                        android:layout_width="@dimen/icon_size_input"
+                                        android:layout_height="@dimen/icon_size_input"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="@dimen/padding_ic_edittext"
+                                        android:padding="3dp"
+                                        android:src="@drawable/name_icon" />
+
+                                    <View
+                                        android:layout_width="1dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginBottom="5dp"
+                                        android:layout_marginTop="5dp"
+                                        android:background="@color/button_cooking_press"></View>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                        android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+                                        <EditText
+                                            android:id="@+id/edtFirstName"
+                                            android:layout_width="match_parent"
+
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:background="#00000000"
+                                            android:hint="@string/first_name"
+                                            android:imeOptions="actionNext"
+                                            android:inputType="textCapWords"
+                                            android:maxLength="15"
+                                            android:maxLines="1"
+                                            android:singleLine="true"
+                                            android:textSize="@dimen/textsize_normal" />
+
+                                        <View
+                                            android:layout_width="1.5dp"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginBottom="5dp"
+                                            android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                            android:layout_marginTop="5dp"
+                                            android:background="@color/button_cooking_press"></View>
+
+                                        <EditText
+                                            android:id="@+id/edtLastName"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_weight="1"
+                                            android:background="#00000000"
+                                            android:hint="@string/last_name"
+                                            android:imeOptions="actionNext"
+                                            android:inputType="textCapWords"
+                                            android:maxLength="15"
+                                            android:maxLines="1"
+                                            android:singleLine="true"
+                                            android:textSize="@dimen/textsize_normal" />
+                                    </LinearLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!--<com.azstack.quickanswer.view.InputForm-->
+                            <!--android:id="@+id/edtFirstName"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--custom:hint_form="@string/first_name"-->
+                            <!--custom:icon_form="@drawable/name_icon"></com.azstack.quickanswer.view.InputForm>-->
+
+                            <!--<com.azstack.quickanswer.view.InputForm-->
+                            <!--android:id="@+id/edtLastName"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--custom:hint_form="@string/last_name"-->
+                            <!--custom:icon_form="@drawable/name_icon"></com.azstack.quickanswer.view.InputForm>-->
+                            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                android:layout_marginTop="@dimen/activity_vertical_margin"
+                                android:background="@drawable/button_login_input"
+                                android:descendantFocusability="beforeDescendants"
+                                android:focusableInTouchMode="true"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:id="@+id/btnProfession"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/height_button_login_input"
+                                    android:clickable="true"
+                                    android:descendantFocusability="beforeDescendants"
+                                    android:focusableInTouchMode="true">
+
+
+                                    <ImageView
+                                        android:layout_width="@dimen/icon_size_input"
+                                        android:layout_height="@dimen/icon_size_input"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="@dimen/padding_ic_edittext"
+                                        android:padding="3dp"
+                                        android:src="@drawable/a_tie" />
+
+                                    <View
+                                        android:layout_width="1.5dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginBottom="5dp"
+                                        android:layout_marginTop="5dp"
+                                        android:background="@color/button_cooking_press"></View>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                        android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+                                        <com.popdq.app.view.textview.TextViewNormal
+                                            android:id="@+id/edtProfesstionnalField"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_toLeftOf="@+id/Profession"
+                                            android:background="#00000000"
+                                            android:clickable="false"
+                                            android:focusable="false"
+                                            android:gravity="center_vertical"
+                                            android:hint="@string/professional_field_hint"
+                                            android:imeOptions="actionNext"
+                                            android:maxLines="1"
+                                            android:singleLine="true"
+                                            android:textSize="@dimen/textsize_normal" />
+
+                                        <ImageView
+                                            android:id="@+id/Profession"
+                                            android:layout_width="@dimen/activity_horizontal_margin"
+                                            android:layout_height="@dimen/activity_horizontal_margin"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:src="@drawable/ic_next" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                android:layout_marginTop="@dimen/activity_vertical_margin"
+                                android:background="@drawable/button_login_input"
+                                android:descendantFocusability="beforeDescendants"
+                                android:focusableInTouchMode="true"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/height_button_login_input"
+                                    android:descendantFocusability="beforeDescendants"
+                                    android:focusableInTouchMode="true">
+
+
+                                    <ImageView
+                                        android:layout_width="@dimen/icon_size_input"
+                                        android:layout_height="@dimen/icon_size_input"
+                                        android:layout_gravity="center"
+                                        android:layout_margin="@dimen/padding_ic_edittext"
+                                        android:padding="3dp"
+                                        android:src="@drawable/a_location" />
+
+                                    <View
+                                        android:layout_width="1.5dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginBottom="5dp"
+                                        android:layout_marginTop="5dp"
+                                        android:background="@color/button_cooking_press"></View>
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                        android:layout_marginRight="@dimen/activity_horizontal_margin">
+
+                                        <com.popdq.app.view.textview.TextViewNormal
+                                            android:id="@+id/tvLocation"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_toLeftOf="@+id/btnLocation"
+                                            android:background="#00000000"
+                                            android:gravity="center_vertical"
+                                            android:hint="@string/select_country"
+                                            android:imeOptions="actionNext"
+                                            android:maxLines="1"
+                                            android:scrollHorizontally="true"
+                                            android:scrollbars="horizontal"
+                                            android:singleLine="true"
+                                            android:textSize="@dimen/textsize_normal" />
+
+                                        <ImageView
+                                            android:id="@+id/btnLocation"
+                                            android:layout_width="@dimen/activity_horizontal_margin"
+                                            android:layout_height="@dimen/activity_horizontal_margin"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_centerVertical="true"
+                                            android:src="@drawable/ic_next"
+                                            android:visibility="visible" />
+                                    </RelativeLayout>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            .azstack.quickanswer.view.InputForm>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"></LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/heigh_content_input"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                android:background="@drawable/bg_descripion"
+                                android:gravity="top"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="@dimen/activity_vertical_margin">
+
+                                    <ImageView
+                                        android:layout_width="@dimen/icon_size_input"
+                                        android:layout_height="@dimen/icon_size_input"
+                                        android:layout_gravity="top"
+                                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                        android:layout_marginRight="@dimen/padding_ic_edittext"
+                                        android:src="@drawable/a_description" />
+
+
+                                    <View
+                                        android:layout_width="2dp"
+                                        android:layout_height="30dp"
+                                        android:layout_marginBottom="@dimen/padding_editext"
+                                        android:background="@color/button_cooking_press"></View>
+
+                                    <!--<com.azstack.quickanswer.view.VerticalScrollview-->
+                                    <!--android:layout_marginBottom="@dimen/activity_vertical_margin"-->
+
+                                    <!--android:layout_marginRight="@dimen/activity_vertical_margin"-->
+                                    <!--android:layout_width="match_parent"-->
+                                    <!--android:layout_height="match_parent">-->
+
+                                    <EditText
+                                        android:id="@+id/edtDescription"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="top"
+                                        android:layout_marginBottom="@dimen/activity_vertical_margin"
+                                        android:layout_marginLeft="@dimen/padding_editext"
+                                        android:layout_marginRight="@dimen/activity_vertical_margin"
+                                        android:background="#00000000"
+                                        android:gravity="top"
+                                        android:hint="@string/description_hint_edit"
+                                        android:imeOptions="actionNext"
+                                        android:overScrollMode="always"
+
+                                        android:scrollbarStyle="insideInset"
+                                        android:scrollbars="vertical"
+                                        android:textSize="@dimen/textsize_normal" />
+                                    <!--</com.azstack.quickanswer.view.VerticalScrollview>-->
+                                </LinearLayout>
+
+                                <!--<EditText-->
+                                <!--android:descendantFocusability="beforeDescendants"-->
+                                <!--android:focusableInTouchMode="true"-->
+                                <!--android:id="@+id/edtDescription"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:layout_gravity="center"-->
+                                <!--android:layout_marginLeft="@dimen/padding_editext"-->
+                                <!--android:background="#00000000"-->
+                                <!--android:gravity="top"-->
+                                <!--android:hint="@string/description_hint"-->
+                                <!--android:imeOptions="actionNext"-->
+                                <!--android:layout_marginTop="@dimen/activity_vertical_margin"-->
+                                <!--android:singleLine="true" />-->
+
+
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:padding="@dimen/activity_horizontal_margin"
+                                android:visibility="gone">
+
+                                <com.popdq.app.view.textview.TextViewNormal
+
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerVertical="true"
+                                    android:text="@string/anonymous_mode"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textSize="@dimen/textsize_normal" />
+
+                                <CheckBox
+                                    android:id="@+id/status_anonymous"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerVertical="true"
+                                    android:button="@drawable/btn_checkbox" />
+                            </RelativeLayout>
+
+                            <com.popdq.app.view.textview.TextViewThin
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                android:text="@string/title_select_price"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/textsize_small" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_button_login_input"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                android:background="@drawable/button_login_input"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/icon_size_input"
+                                    android:layout_height="@dimen/icon_size_input"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="@dimen/activity_horizontal_margin"
+                                    android:src="@drawable/a_price" />
+
+
+                                <View
+                                    android:layout_width="2dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginBottom="@dimen/padding_editext"
+                                    android:layout_marginTop="@dimen/padding_editext"
+                                    android:background="@color/button_cooking_press"></View>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <com.popdq.app.view.textview.TextViewNormal
+                                        android:id="@+id/textCredit"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/padding_editext"
+                                        android:background="#00000000"
+                                        android:gravity="center_vertical"
+                                        android:hint="@string/select_text_price"
+                                        android:singleLine="true"
+                                        android:textSize="@dimen/textsize_normal" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                        android:src="@drawable/answer_downvote" />
+                                </RelativeLayout>
+
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right"
+                                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                android:layout_marginTop="@dimen/activity_vertical_margin">
+
+                                <com.popdq.app.view.textview.TextViewNormal
+                                    android:id="@+id/tvEarnText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/you_earn"
+                                    android:textColor="@color/colorPrimary" />
+
+                                <com.popdq.app.view.textview.TextViewNormal
+                                    android:id="@+id/tvWhy1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/activity_vertical_margin"
+                                    android:text="@string/why"
+                                    android:textColor="@drawable/text_color_view_all" />
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_button_login_input"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                android:background="@drawable/button_login_input"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/icon_size_input"
+                                    android:layout_height="@dimen/icon_size_input"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="@dimen/activity_horizontal_margin"
+                                    android:src="@drawable/a_price" />
+
+
+                                <View
+                                    android:layout_width="2dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginBottom="@dimen/padding_editext"
+                                    android:layout_marginTop="@dimen/padding_editext"
+                                    android:background="@color/button_cooking_press"></View>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <com.popdq.app.view.textview.TextViewNormal
+                                        android:id="@+id/voiceCredit"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/padding_editext"
+                                        android:background="#00000000"
+                                        android:gravity="center_vertical"
+                                        android:hint="@string/select_voice_price"
+                                        android:singleLine="true"
+                                        android:textSize="@dimen/textsize_normal" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                        android:src="@drawable/answer_downvote" />
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right"
+                                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                android:layout_marginTop="@dimen/activity_vertical_margin">
+
+                                <com.popdq.app.view.textview.TextViewNormal
+                                    android:id="@+id/tvEarnVoice"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/you_earn"
+                                    android:textColor="@color/colorPrimary" />
+
+                                <com.popdq.app.view.textview.TextViewNormal
+                                    android:id="@+id/tvWhy2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/activity_vertical_margin"
+                                    android:text="@string/why"
+                                    android:textColor="@drawable/text_color_view_all" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/height_button_login_input"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                android:background="@drawable/button_login_input"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/icon_size_input"
+                                    android:layout_height="@dimen/icon_size_input"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="@dimen/activity_horizontal_margin"
+                                    android:src="@drawable/a_price" />
+
+
+                                <View
+                                    android:layout_width="2dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginBottom="@dimen/padding_editext"
+                                    android:layout_marginTop="@dimen/padding_editext"
+                                    android:background="@color/button_cooking_press"></View>
+
+                                <RelativeLayout
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <com.popdq.app.view.textview.TextViewNormal
+                                        android:id="@+id/videoCredit"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginLeft="@dimen/padding_editext"
+                                        android:background="#00000000"
+                                        android:gravity="center_vertical"
+                                        android:hint="@string/select_video_price"
+                                        android:singleLine="true"
+                                        android:textSize="@dimen/textsize_normal" />
+
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                        android:src="@drawable/answer_downvote" />
+
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="right"
+                                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                android:layout_marginTop="@dimen/activity_vertical_margin">
+
+                                <com.popdq.app.view.textview.TextViewNormal
+                                    android:id="@+id/tvEarnVideo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/you_earn"
+                                    android:textColor="@color/colorPrimary" />
+
+                                <com.popdq.app.view.textview.TextViewNormal
+                                    android:id="@+id/tvWhy3"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/activity_vertical_margin"
+                                    android:text="@string/why"
+                                    android:textColor="@drawable/text_color_view_all" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="@dimen/activity_horizontal_margin">
+
+                                <com.popdq.app.view.textview.TextViewThin
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/limit_voice"
+                                    android:textColor="@color/text_solved_static"
+                                    android:textSize="@dimen/textsize_small" />
+
+                                <!--<com.azstack.quickanswer.view.textview.TextViewThin-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:text="@string/limit_video"-->
+                                <!--android:textColor="@color/text_solved_static"-->
+                                <!--android:textSize="@dimen/textsize_small" />-->
+
+                                <RelativeLayout
+                                    android:id="@+id/btnLanguage"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/height_button_login_input"
+                                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                                    android:background="@drawable/button_login_input"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal">
+
+                                    <!--<com.azstack.quickanswer.view.textview.TextViewNormal-->
+                                    <!--android:layout_width="wrap_content"-->
+                                    <!--android:layout_height="wrap_content"-->
+                                    <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                                    <!--android:singleLine="true"-->
+                                    <!--android:text="@string/language_answer"-->
+                                    <!--android:textColor="@color/colorPrimary"-->
+                                    <!--android:textSize="@dimen/textsize_normal" />-->
+
+                                    <com.popdq.app.view.textview.TextViewNormal
+                                        android:id="@+id/tvLanguage"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                        android:layout_toLeftOf="@+id/img"
+                                        android:background="#00000000"
+                                        android:gravity="center_vertical"
+                                        android:hint="@string/select_languge"
+                                        android:imeOptions="actionDone"
+                                        android:singleLine="true"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textColorHint="@color/text_in_main"
+                                        android:textSize="@dimen/textsize_normal" />
+
+                                    <ImageView
+                                        android:id="@+id/img"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                        android:src="@drawable/answer_downvote" />
+
+                                </RelativeLayout>
+
+
+                            </LinearLayout>
+
+                            <com.popdq.app.view.InputForm
+                                android:id="@+id/newPassword"
+                                android:visibility="visible"
+                                app:icon_form="@drawable/name_icon"
+                                app:hint_form="@string/new_password"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"></com.popdq.app.view.InputForm>
+                            <!--<LinearLayout-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:background="@color/input_ask"-->
+                            <!--android:orientation="vertical">-->
+
+                            <!---->
+
+                            <!--<LinearLayout-->
+                            <!--android:id="@+id/btnLanguageSpoken"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="@dimen/height_button_login_input"-->
+                            <!--android:layout_marginBottom="@dimen/activity_horizontal_margin"-->
+                            <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                            <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+                            <!--android:layout_marginTop="@dimen/activity_horizontal_margin"-->
+                            <!--android:background="@drawable/button_login_input"-->
+                            <!--android:gravity="center_vertical"-->
+                            <!--android:orientation="horizontal">-->
+
+                            <!--<com.azstack.quickanswer.view.textview.TextViewNormal-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                            <!--android:singleLine="true"-->
+                            <!--android:text="@string/language_spoken"-->
+                            <!--android:textColor="@color/colorPrimary"-->
+                            <!--android:textSize="@dimen/textsize_normal" />-->
+
+                            <!--<AutoCompleteTextView-->
+                            <!--android:id="@+id/tvLanguageSpoken"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                            <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+                            <!--android:background="#00000000"-->
+                            <!--android:gravity="center_vertical"-->
+                            <!--android:hint="@string/select"-->
+                            <!--android:imeOptions="actionDone"-->
+                            <!--android:singleLine="true"-->
+                            <!--android:textColor="@color/colorPrimary"-->
+                            <!--android:textColorHint="@color/text_in_main"-->
+                            <!--android:textSize="@dimen/textsize_normal" />-->
+
+
+                            <!--</LinearLayout>-->
+                            <!--</LinearLayout>-->
+
+
+                            <include layout="@layout/bottom_layout_with_button_new_design"
+                                android:visibility="gone"></include>
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+                </com.popdq.app.view.VerticalScrollview>
+
+            </RelativeLayout>
+        </ScrollView>
+
+        <ViewStub
+            android:id="@+id/v_stub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/picture_option_dialog" />
+    </RelativeLayout>
+</RelativeLayout>

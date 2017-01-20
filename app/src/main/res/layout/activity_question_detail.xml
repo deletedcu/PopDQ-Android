@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/button_cooking_static">
+
+    <include
+        android:id="@+id/lToolbar"
+        layout="@layout/toolbar_question_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></include>
+
+    <LinearLayout
+        android:id="@+id/content_height"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom"
+        android:layout_below="@+id/lToolbar"
+        android:orientation="vertical"></LinearLayout>
+
+
+    <FrameLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:id="@+id/layoutViewAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_button_bottom_new_design"
+            android:layout_gravity="bottom"
+            android:background="@drawable/button_pop_a_question"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/icMethod3"
+                    android:layout_width="@dimen/size_icon_method_small"
+                    android:layout_height="@dimen/size_icon_method_small" />
+
+                <com.popdq.app.view.textview.TextViewNormal
+                    android:id="@+id/tvBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="@string/view_answer"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_large" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/notMyQuestion2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <com.popdq.app.view.textview.TextViewNormal
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="( "
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_large" />
+
+                <ImageView
+                    android:id="@+id/icMethod2"
+                    android:layout_width="@dimen/size_icon_method_small"
+                    android:layout_height="@dimen/size_icon_method_small"
+                    android:src="@drawable/ic_audio_white" />
+
+                <com.popdq.app.view.textview.TextViewNormal
+                    android:id="@+id/tvFee2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_vertical_margin"
+                    android:text="$0.01)"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/textsize_large" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bottom_color"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layoutDeclineAndReply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom|center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/btnDecline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/height_button_login_input"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_standard_black"
+                    android:text="@string/decline"
+                    android:textColor="@drawable/text_color_sign_up"
+                    android:textSize="@dimen/textsize_small" />
+
+                <Button
+                    android:id="@+id/btnReply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/height_button_login_input"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_standard_green"
+                    android:text="@string/reply"
+                    android:textColor="@drawable/text_color_login"
+                    android:textSize="@dimen/textsize_small" />
+            </LinearLayout>
+
+            <!--<View-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="3dp"-->
+            <!--android:background="@drawable/title_underline"></View>-->
+        </LinearLayout>
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_above="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lToolbar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RelativeLayout
+            android:id="@+id/question"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/layout_content"
+                layout="@layout/title_and_content_detail_question_or_text_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></include>
+
+            <LinearLayout
+                android:id="@+id/detail_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_content"
+                android:layout_marginTop="@dimen/activity_horizontal_margin"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:background="@color/main_login"></View>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:background="@drawable/bg_solved"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/activity_vertical_margin">
+
+                    <com.popdq.app.view.textview.TextViewNormal
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/language"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textsize_normal" />
+
+                    <com.popdq.app.view.textview.TextViewNormal
+                        android:id="@+id/tvLanguage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textsize_normal"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="@dimen/activity_horizontal_margin"-->
+                <!--android:background="@drawable/bg_solved"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:paddingBottom="@dimen/activity_vertical_margin"-->
+                <!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
+                <!--android:paddingRight="@dimen/activity_horizontal_margin"-->
+                <!--android:paddingTop="@dimen/activity_vertical_margin">-->
+
+                <!--<com.azstack.quickanswer.view.textview.TextViewNormal-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/language_spoken"-->
+                <!--android:textColor="@color/colorPrimary"-->
+                <!--android:textSize="@dimen/textsize_normal" />-->
+
+                <!--<com.azstack.quickanswer.view.textview.TextViewNormal-->
+                <!--android:id="@+id/tvLanguageSpoken"-->
+                <!--android:layout_width="wrap_content"-->
+
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                <!--android:text=""-->
+                <!--android:textColor="@color/colorPrimary"-->
+                <!--android:textSize="@dimen/textsize_normal"-->
+                <!--android:textStyle="bold" />-->
+                <!--</LinearLayout>-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/activity_vertical_margin">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <com.popdq.app.view.textview.TextViewNormal
+                            android:id="@+id/text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:text="@string/reply_method"
+                            android:textColor="@color/text_solved_static" />
+
+                        <com.popdq.app.view.textview.TextViewNormal
+                            android:id="@+id/textMethod"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:layout_toRightOf="@+id/text"
+                            android:text=""
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/textsize_normal" />
+                    </RelativeLayout>
+
+                    <com.popdq.app.view.textview.TextViewNormal
+                        android:id="@+id/tvCreditYouEarn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/you_earn_from_answering"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textsize_small" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <include
+                android:id="@+id/userFavorite"
+                layout="@layout/layout_user_of_question_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/detail_info"
+                android:layout_gravity="bottom"></include>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

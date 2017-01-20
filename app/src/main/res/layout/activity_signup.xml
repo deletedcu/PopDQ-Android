@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.popdq.app.view.MyLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:background="@color/main_login"
+    android:orientation="vertical"
+    android:id="@+id/layout"
+    android:animateLayoutChanges="true"
+    android:layout_height="match_parent">
+
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:id="@+id/scrolllogin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/activity_horizontal_margin"
+                android:animateLayoutChanges="true"
+                android:id="@+id/logo">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/logo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/option"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/logo"
+                android:gravity="center"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical">
+
+                <com.popdq.app.view.textview.TextViewNormal
+                    android:id="@+id/optionName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:layout_marginTop="@dimen/magrin_top_option_name"
+                    android:text="OPTION NAME"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/textsize_login_option"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@color/button_cooking_press"></View>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/option"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@+id/signUp"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin"
+                    android:descendantFocusability="beforeDescendants"
+                    android:focusableInTouchMode="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.popdq.app.view.InputForm
+                        android:id="@+id/edtUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:imeActionLabel="Next"
+                        custom:hint_form="@string/username"
+                        custom:icon_form="@drawable/a_user"> <requestFocus /></com.popdq.app.view.InputForm>
+
+
+                    <com.popdq.app.view.InputForm
+                        android:id="@+id/edtEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:imeActionLabel="Next"
+                        custom:hint_form="@string/email"
+                        custom:icon_form="@drawable/email_icon"></com.popdq.app.view.InputForm>
+
+                    <com.popdq.app.view.InputForm
+                        android:id="@+id/edtPassWord"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:imeActionLabel="Next"
+                        custom:hint_form="@string/password"
+                        custom:icon_form="@drawable/password_icon"></com.popdq.app.view.InputForm>
+
+                    <com.popdq.app.view.InputForm
+                        android:id="@+id/edtPassWordConfirm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionDone"
+                        android:imeActionLabel="Done"
+                        custom:hint_form="@string/confirm_your_password"
+                        custom:icon_form="@drawable/password_icon"></com.popdq.app.view.InputForm>
+
+                    <!--<LinearLayout-->
+
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="@dimen/height_button_login_input"-->
+                    <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                    <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+                    <!--android:layout_marginTop="@dimen/activity_horizontal_margin"-->
+                    <!--android:background="@drawable/button_login_input"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<ImageView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:padding="@dimen/padding_ic_edittext"-->
+                    <!--android:src="@drawable/email_icon" />-->
+
+                    <!--<View-->
+                    <!--android:layout_width="2dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_marginBottom="@dimen/padding_editext"-->
+                    <!--android:layout_marginTop="@dimen/padding_editext"-->
+                    <!--android:background="@color/button_cooking_press"></View>-->
+
+                    <!--<EditText-->
+                    <!--android:id="@+id/edtEmail"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                    <!--android:background="#00000000"-->
+                    <!--android:hint="@string/fill_your_email"-->
+                    <!--android:imeOptions="actionNext"-->
+                    <!--android:maxLines="1"-->
+                    <!--android:singleLine="true" />-->
+
+
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="@dimen/height_button_login_input"-->
+                    <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                    <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+                    <!--android:layout_marginTop="@dimen/activity_horizontal_margin"-->
+                    <!--android:background="@drawable/button_login_input"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<ImageView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center"-->
+
+                    <!--android:padding="@dimen/padding_ic_edittext"-->
+                    <!--android:src="@drawable/password_icon" />-->
+
+                    <!--<View-->
+                    <!--android:layout_width="2dp"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_marginBottom="@dimen/padding_editext"-->
+                    <!--android:layout_marginTop="@dimen/padding_editext"-->
+                    <!--android:background="@color/button_cooking_press"></View>-->
+
+                    <!--<EditText-->
+                    <!--android:id="@+id/edtPass"-->
+                    <!--android:layout_width="match_parent"-->
+
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_gravity="center"-->
+                    <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                    <!--android:background="#00000000"-->
+                    <!--android:hint="@string/fill_your_password"-->
+                    <!--android:inputType="textPassword"-->
+                    <!--android:maxLines="1" />-->
+
+
+                    <!--</LinearLayout>-->
+
+                    <Button
+                        android:id="@+id/btnLogin"
+                        android:layout_width="@dimen/width_button_login"
+                        android:layout_height="@dimen/height_button_login_input"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                        android:background="@drawable/bg_login"
+                        android:text="@string/sign__up"
+                        android:textColor="@drawable/text_color_login"
+                        android:textSize="@dimen/textsize_buton_login" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+
+</com.popdq.app.view.MyLayout>

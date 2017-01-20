@@ -1,0 +1,150 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view_space"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_search" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_title_feed">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_title_feed"
+            android:background="@color/item_question">
+
+            <LinearLayout
+                android:id="@+id/textTitleUser"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/btnViewAll"
+                android:gravity="center_vertical">
+
+                <com.popdq.app.view.textview.TextViewBold
+                    android:id="@+id/tvTitle_feature_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/activity_vertical_margin"
+                    android:text="@string/featured_users"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/textsize_small" />
+
+                <com.popdq.app.view.textview.TextViewThin
+                    android:id="@+id/des_feature_user"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:lines="1"
+                    android:paddingLeft="3dp"
+                    android:text="@string/des_featured_users"
+                    android:textColor="@color/text_solved_static"
+                    android:textSize="@dimen/textsize_small_x" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/textUser"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_title_feed"
+                android:background="@color/item_question"
+                android:gravity="center_vertical"
+                android:visibility="gone"
+                android:layout_toLeftOf="@+id/btnViewAll"
+                android:layout_toStartOf="@+id/btnViewAll">
+
+                <com.popdq.app.view.textview.TextViewBold
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/activity_vertical_margin"
+                    android:text="@string/users"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/textsize_small" />
+
+                <com.popdq.app.view.textview.TextViewThin
+                    android:id="@+id/resultUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:text="@string/no_result_for" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/btnViewAll"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:gravity="center">
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/main_login"></View>
+
+                <com.popdq.app.view.textview.TextViewNormal
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:text="@string/view_all"
+                    android:textColor="@drawable/text_color_view_all"
+                    android:textSize="@dimen/textsize_small" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listUsers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_login">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/textQuetion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/item_question"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+
+        <com.popdq.app.view.textview.TextViewBold
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_title_feed"
+            android:layout_centerVertical="true"
+
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/activity_vertical_margin"
+            android:text="@string/questions"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/textsize_small" />
+
+        <com.popdq.app.view.textview.TextViewThin
+            android:id="@+id/resultQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:text="@string/no_result_for" />
+
+    </LinearLayout>
+    <!--<com.azstack.quickanswer.view.textview.TextViewBold-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="?attr/actionBarSize"-->
+    <!--android:background="@color/button_cooking_static"-->
+    <!--android:gravity="center_vertical"-->
+    <!--android:paddingLeft="@dimen/activity_vertical_margin"-->
+    <!--android:text="@string/your_feed"-->
+    <!--android:textSize="@dimen/textsize_small"-->
+    <!--android:textColor="@color/colorPrimary"></com.azstack.quickanswer.view.textview.TextViewBold>-->
+
+
+</LinearLayout>

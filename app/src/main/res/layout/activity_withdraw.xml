@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.popdq.app.ui.WithdrawActivity">
+
+    <include
+        android:id="@+id/lToolbar"
+        layout="@layout/toolbar_with_button"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom"
+        android:layout_below="@+id/lToolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/lToolbar"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/main_login"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/activity_horizontal_margin">
+
+                <com.popdq.app.view.textview.TextViewBold
+                    android:id="@+id/tvTotalEarning"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:text="@string/total_earning"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/textsize_normal" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:background="@drawable/bg_title"
+                    android:descendantFocusability="beforeDescendants"
+                    android:focusableInTouchMode="true"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_button_login_input"
+                        android:descendantFocusability="beforeDescendants"
+                        android:focusableInTouchMode="true">
+
+
+                        <ImageView
+                            android:id="@+id/imgIcon"
+                            android:layout_width="@dimen/icon_size_input"
+                            android:layout_height="@dimen/icon_size_input"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/padding_ic_edittext"
+                            android:padding="3dp"
+                            android:src="@drawable/a_price" />
+
+                        <View
+                            android:layout_width="1.5dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/button_cooking_press"></View>
+
+                        <EditText
+                            android:id="@+id/inputAmount"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:layout_marginRight="@dimen/activity_horizontal_margin"
+                            android:background="#00000000"
+                            android:hint="@string/withdraw_amount"
+                            android:imeOptions="actionNext"
+                            android:maxLines="1"
+                            android:inputType="numberDecimal"
+                            android:singleLine="true"
+                            android:textSize="@dimen/textsize_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/activity_horizontal_margin">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <com.popdq.app.view.textview.TextViewNormal
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/activity_vertical_margin"
+                        android:text="@string/withdraw_fee"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textsize_normal"
+                        android:textStyle="bold" />
+
+                    <com.popdq.app.view.textview.TextViewNormal
+                        android:id="@+id/tvWithdrawTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$1"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textsize_normal" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <com.popdq.app.view.textview.TextViewNormal
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginRight="@dimen/activity_vertical_margin"
+                        android:text="@string/withdraw_process_time"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textsize_normal"
+                        android:textStyle="bold" />
+
+                    <com.popdq.app.view.textview.TextViewNormal
+                        android:id="@+id/tvWithdrawFee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="4 Business days"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textsize_normal" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <com.popdq.app.view.textview.TextViewNormal
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/activity_vertical_margin"
+                        android:text="@string/min_values_withdraw"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textsize_normal"
+                        android:textStyle="bold" />
+
+                    <com.popdq.app.view.textview.TextViewNormal
+                        android:id="@+id/tvMinValuesWithdraw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="$10"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textsize_normal" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/main_login"
+                android:gravity="center"
+                android:padding="@dimen/activity_horizontal_margin">
+
+                <com.popdq.app.view.textview.TextViewNormal
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/choose_withdraw_method"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/textsize_normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/activity_horizontal_margin">
+
+                <RelativeLayout
+
+                    android:id="@+id/btnWithDrawPaypal"
+                    android:layout_width="@dimen/width_button_withdraw"
+                    android:layout_height="@dimen/height_button_withdraw"
+                    android:background="@drawable/button_withdraw_paypal"
+                    android:orientation="horizontal">
+
+                    <!--<com.azstack.quickanswer.view.textview.TextViewThin-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:layout_toLeftOf="@+id/iconPaypal"-->
+                        <!--android:text="@string/button_withdraw_paypal" />-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/iconPaypal"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+                        <!--android:src="@drawable/paypal_icon" />-->
+                </RelativeLayout>
+
+
+                <com.popdq.app.view.textview.TextViewBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:text="OR"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/textsize_large" />
+
+                <Button
+                    android:id="@+id/btnWithDrawBank"
+                    android:layout_width="@dimen/width_button_withdraw"
+                    android:layout_height="@dimen/height_button_withdraw"
+                    android:background="@drawable/button_transfer"
+                    android:text="@string/bank_transfer"
+                    android:textColor="@color/white" />
+
+                <com.popdq.app.view.textview.TextViewThin
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:text="@string/only_national"
+                    android:textColor="@color/text_solved_static"
+                    android:textSize="@dimen/textsize_small" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/button_login_press"></View>
+</RelativeLayout>

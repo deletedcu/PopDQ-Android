@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/input_ask"
+    android:layout_height="match_parent"
+    tools:context=".ui.ProvideAnswerByTextActivity">
+
+    <include
+        android:id="@+id/lToolbar"
+        layout="@layout/toolbar_with_button"></include>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bottom">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/main_login"
+                android:orientation="vertical">
+
+                <com.popdq.app.view.textview.TextViewNormal
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:text="How to use this?"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/textsize_normal"
+                    android:textStyle="bold" />
+
+                <include layout="@layout/divider"></include>
+
+                <EditText
+                    android:id="@+id/edtContent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/heigh_content_input"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:background="@drawable/bg_descripion"
+                    android:gravity="top"
+                    android:textSize="@dimen/textsize_normal"
+                    android:hint="@string/type_your_answer"
+                    android:padding="@dimen/activity_vertical_margin" />
+
+                <include layout="@layout/layout_upload_images"></include>
+
+                <!--<include layout="@layout/divider"></include>-->
+
+                <!--<RelativeLayout-->
+                    <!--android:id="@+id/btnAskAnonymous"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_margin="@dimen/activity_horizontal_margin"-->
+                    <!--android:background="@drawable/bg_solved"-->
+                    <!--android:gravity="center_vertical"-->
+                    <!--android:paddingBottom="@dimen/activity_vertical_margin"-->
+                    <!--android:paddingLeft="@dimen/activity_horizontal_margin"-->
+                    <!--android:paddingRight="@dimen/activity_horizontal_margin"-->
+                    <!--android:paddingTop="@dimen/activity_vertical_margin">-->
+
+                    <!--<com.azstack.quickanswer.view.textview.TextViewNormal-->
+                        <!--android:id="@+id/text"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:text="@string/answer_anonymously"-->
+                        <!--android:textColor="@color/colorPrimary" />-->
+
+                    <!--<com.azstack.quickanswer.view.textview.TextViewNormal-->
+                        <!--android:id="@+id/tvAnonymous"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                        <!--android:layout_toRightOf="@+id/text"-->
+                        <!--android:text=""-->
+                        <!--android:textColor="@color/colorPrimary"-->
+                        <!--android:textStyle="bold" />-->
+
+                    <!--<ImageView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+                        <!--android:src="@drawable/answer_downvote" />-->
+                <!--</RelativeLayout>-->
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/bottom"
+        layout="@layout/bottom_layout_without_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/lToolbar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"></include>
+
+</RelativeLayout>

@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="false">
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/main_login"
+            android:orientation="vertical"
+            tools:context="com.popdq.app.ui.ExpertProfileActivity">
+
+            <include
+                android:id="@+id/toolbar1"
+                layout="@layout/toolbar_with_button"></include>
+
+            <ScrollView
+                android:id="@+id/rootScroll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="false">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_profile_expert_title">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/height_profile_expert_title"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:background="@color/colorPrimary"></LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"></LinearLayout>
+                        </LinearLayout>
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/imgAvatar"
+                            android:layout_width="@dimen/height_profile_expert_avatar"
+                            android:layout_height="@dimen/height_profile_expert_avatar"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/profile_information_avatar"
+                            app:civ_border_color="@color/border_color"
+                            app:civ_border_width="@dimen/border_avatar" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_margin="@dimen/activity_horizontal_margin"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imgVerified"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/activity_vertical_margin"
+                                android:src="@drawable/ic_not_verified" />
+
+                            <com.popdq.app.view.textview.TextViewNormal
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/verified" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/btnAddToFav"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="@dimen/activity_horizontal_margin"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imgFavorite"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/activity_vertical_margin"
+                                android:src="@drawable/add_to_favorite_favlist_not_added_icon" />
+
+                            <com.popdq.app.view.textview.TextViewNormal
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/add_to_favorite" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <include layout="@layout/option"></include>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/activity_horizontal_margin"
+                        android:paddingRight="@dimen/activity_horizontal_margin">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/size_icon_expert_profile"
+                                android:layout_height="@dimen/size_icon_expert_profile"
+                                android:src="@drawable/b_user" />
+
+                            <com.popdq.app.view.textview.TextViewNormal
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                                android:text="@string/username_expert"
+                                android:textColor="@color/text_in_main" />
+
+                        </LinearLayout>
+
+
+                        <com.popdq.app.view.textview.TextViewNormal
+                            android:id="@+id/tvNameAnswer"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:background="@drawable/bg_info_expert"
+                            android:paddingBottom="@dimen/pading_login_button"
+                            android:paddingLeft="@dimen/activity_horizontal_margin"
+                            android:paddingTop="@dimen/pading_login_button"
+                            android:text=""
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/size_icon_expert_profile"
+                                android:layout_height="@dimen/size_icon_expert_profile"
+                                android:src="@drawable/b_tie" />
+
+                            <com.popdq.app.view.textview.TextViewNormal
+                                android:layout_width="wrap_content"
+
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                                android:text="@string/professional_field"
+                                android:textColor="@color/text_in_main" />
+
+                        </LinearLayout>
+
+
+                        <com.popdq.app.view.textview.TextViewNormal
+                            android:id="@+id/tvProfesstion"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:background="@drawable/bg_info_expert"
+                            android:paddingBottom="@dimen/pading_login_button"
+                            android:paddingLeft="@dimen/activity_horizontal_margin"
+                            android:paddingTop="@dimen/pading_login_button"
+                            android:text="@string/anonymous"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/size_icon_expert_profile"
+                                android:layout_height="@dimen/size_icon_expert_profile"
+                                android:src="@drawable/a_calender" />
+
+                            <com.popdq.app.view.textview.TextViewNormal
+                                android:layout_width="wrap_content"
+
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                                android:text="@string/expert_year"
+                                android:textColor="@color/text_in_main" />
+                        </LinearLayout>
+
+                        <com.popdq.app.view.textview.TextViewNormal
+                            android:id="@+id/tvExperienceYear"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:background="@drawable/bg_info_expert"
+
+                            android:paddingBottom="@dimen/pading_login_button"
+                            android:paddingLeft="@dimen/activity_horizontal_margin"
+                            android:paddingTop="@dimen/pading_login_button"
+                            android:text="@string/anonymous"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/size_icon_expert_profile"
+                                android:layout_height="@dimen/size_icon_expert_profile"
+                                android:src="@drawable/b_location" />
+
+                            <com.popdq.app.view.textview.TextViewNormal
+                                android:layout_width="wrap_content"
+
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                                android:text="@string/location_and_origins"
+                                android:textColor="@color/text_in_main" />
+                        </LinearLayout>
+
+                        <com.popdq.app.view.textview.TextViewNormal
+                            android:id="@+id/tvLocation"
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:background="@drawable/bg_info_expert"
+
+                            android:paddingBottom="@dimen/pading_login_button"
+                            android:paddingLeft="@dimen/activity_horizontal_margin"
+                            android:paddingTop="@dimen/pading_login_button"
+                            android:text="@string/anonymous"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/size_icon_expert_profile"
+                                android:layout_height="@dimen/size_icon_expert_profile"
+                                android:src="@drawable/b_price" />
+
+                            <com.popdq.app.view.textview.TextViewNormal
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                                android:text="@string/text_price_upper"
+                                android:textColor="@color/text_in_main" />
+                        </LinearLayout>
+
+                        <com.popdq.app.view.textview.TextViewNormal
+                            android:id="@+id/tvTextPrice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:background="@drawable/bg_info_expert"
+                            android:paddingBottom="@dimen/pading_login_button"
+                            android:paddingLeft="@dimen/activity_horizontal_margin"
+                            android:paddingTop="@dimen/pading_login_button"
+                            android:text="@string/anonymous"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/size_icon_expert_profile"
+                                android:layout_height="@dimen/size_icon_expert_profile"
+                                android:src="@drawable/b_price" />
+
+                            <com.popdq.app.view.textview.TextViewNormal
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                                android:text="@string/voice_price_upper"
+                                android:textColor="@color/text_in_main" />
+                        </LinearLayout>
+
+                        <com.popdq.app.view.textview.TextViewNormal
+                            android:id="@+id/tvVoicePrice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:background="@drawable/bg_info_expert"
+                            android:paddingBottom="@dimen/pading_login_button"
+                            android:paddingLeft="@dimen/activity_horizontal_margin"
+                            android:paddingTop="@dimen/pading_login_button"
+                            android:text="@string/anonymous"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/size_icon_expert_profile"
+                                android:layout_height="@dimen/size_icon_expert_profile"
+                                android:src="@drawable/b_price" />
+
+                            <com.popdq.app.view.textview.TextViewNormal
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                                android:text="@string/video_price_upper"
+                                android:textColor="@color/text_in_main" />
+                        </LinearLayout>
+
+                        <com.popdq.app.view.textview.TextViewNormal
+                            android:id="@+id/tvVideoPrice"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:background="@drawable/bg_info_expert"
+                            android:paddingBottom="@dimen/pading_login_button"
+                            android:paddingLeft="@dimen/activity_horizontal_margin"
+                            android:paddingTop="@dimen/pading_login_button"
+                            android:text="@string/anonymous"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/size_icon_expert_profile"
+                                android:layout_height="@dimen/size_icon_expert_profile"
+                                android:src="@drawable/b_description" />
+
+                            <com.popdq.app.view.textview.TextViewNormal
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                                android:text="@string/description"
+                                android:textColor="@color/text_in_main" />
+                        </LinearLayout>
+
+
+                        <ScrollView
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:id="@+id/SCROLLER_ID"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/heigh_content_input"
+                            android:background="@drawable/bg_info_expert_des"
+                            android:fillViewport="true"
+                            android:gravity="center"
+
+                            android:scrollbars="vertical">
+
+                            <LinearLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/heigh_content_input_text"
+                                android:gravity="center">
+
+                                <com.popdq.app.view.textview.TextViewNormal
+                                    android:id="@+id/tvDescription"
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/heigh_content_input_text"
+                                    android:paddingBottom="@dimen/pading_login_button"
+                                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                                    android:paddingRight="@dimen/activity_horizontal_margin"
+                                    android:paddingTop="@dimen/pading_login_button"
+                                    android:text="@string/anonymous"
+                                    android:textColor="@color/colorPrimary"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </ScrollView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <com.popdq.app.view.textview.TextViewNormal
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/my_answerd_question"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/textsize_login_option"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:layout_marginRight="@dimen/activity_horizontal_margin"
+                            android:layout_marginTop="@dimen/activity_vertical_margin"
+                            android:background="@color/button_cooking_press"></View>
+                    </LinearLayout>
+
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/list"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/button_cooking_static"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"></android.support.v7.widget.RecyclerView>
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/title_underline"></View>
+    </RelativeLayout>
+</ScrollView>

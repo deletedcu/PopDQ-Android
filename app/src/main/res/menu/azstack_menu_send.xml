@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/azstack_action_search"
+        android:icon="@drawable/azstack_ic_search_dark"
+        android:title="@string/azstack_search"
+        android:visible="false"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/azstack_menu_send"
+        android:icon="@drawable/azstack_btn_send_white"
+        android:title="@string/azstack_send"
+        app:showAsAction="always"/>
+</menu>

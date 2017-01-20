@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_login"
+    android:orientation="vertical"
+    tools:context="com.popdq.app.ui.TransactionViewActivity">
+
+    <include layout="@layout/toolbar_with_button"></include>
+
+
+    <com.popdq.app.view.textview.TextViewNormal
+        android:id="@+id/tvTotalCreditAvaliable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/button_cooking_press"
+        android:gravity="center"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:text="@string/total_credits"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/textsize_normal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@color/button_cooking_press"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.popdq.app.view.textview.TextViewNormal
+                android:id="@+id/tvTotalEarning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/total_earning"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/textsize_normal" />
+
+            <com.popdq.app.view.textview.TextViewThin
+                android:id="@+id/btnWithDraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:text="@string/withdraw_underline"
+                android:textColor="@drawable/text_color_view_all"
+                android:textSize="@dimen/textsize_normal" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnTransfer"
+            android:layout_width="@dimen/width_button_transfer"
+            android:layout_height="@dimen/height_button_transfer"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:background="@drawable/button_transfer"
+
+            android:text="@string/tranfer_to_credit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/textsize_small" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listTransaction"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+</LinearLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

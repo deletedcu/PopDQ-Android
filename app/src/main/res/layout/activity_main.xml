@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--<include layout="@layout/toolbar_main"></include>-->
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tablayout"
+
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/white" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bar"
+        />
+
+    <LinearLayout
+        android:id="@+id/btnBottom"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/ask_button"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!--<ImageView-->
+        <!--android:layout_width="@dimen/size_icon_method_small"-->
+        <!--android:layout_height="@dimen/size_icon_method_small"-->
+        <!--android:src="@drawable/ask" />-->
+
+        <!--<com.popdq.app.view.textview.TextViewBold-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="POP"-->
+        <!--android:textColor="@color/ic_pop_color"-->
+        <!--android:textSize="@dimen/textsize_small_x" />-->
+
+    </LinearLayout>
+    <!--<android.support.design.widget.FloatingActionButton-->
+    <!--android:id="@+id/btnBottom"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_margin="@dimen/activity_horizontal_margin"-->
+    <!--android:src="@drawable/ic_pop"-->
+    <!--app:fabSize="normal" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/buttonShare"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Share Link"-->
+        <!--android:gravity="center"-->
+        <!--android:visibility="gone"-->
+        <!--android:textAppearance="@android:style/TextAppearance.Large"-->
+        <!--android:textColor="@android:color/white"-->
+        <!--android:background="@android:color/darker_gray"-->
+        <!--android:layout_weight="1"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true" />-->
+
+
+</RelativeLayout>

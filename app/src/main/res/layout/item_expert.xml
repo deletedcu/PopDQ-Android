@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="5dp"
+        android:padding="@dimen/activity_vertical_margin"
+        card_view:cardBackgroundColor="@color/item_question"
+        card_view:cardCornerRadius="5dp">
+
+        <RelativeLayout
+            android:id="@+id/root"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/layoutAvatar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgAvatar"
+                    android:layout_width="@dimen/avatar_list_question"
+                    android:layout_height="@dimen/avatar_list_question"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:src="@drawable/list_avatar"
+                    app:civ_border_color="@color/border_color"
+                    app:civ_border_width="@dimen/border_avatar" />
+
+                <ImageView
+                    android:id="@+id/imgFollow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                    android:src="@drawable/ic_follow_small" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/layoutAvatar"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_horizontal_margin">
+
+                    <Button
+                        android:id="@+id/btnAsk"
+                        android:layout_width="@dimen/width_btn_ask_item"
+                        android:layout_height="@dimen/height_btn_ask_item"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/button_small_green"
+                        android:text="@string/ask"
+                        android:textAllCaps="false"
+                        android:textColor="@drawable/text_color_login"
+                        android:textSize="@dimen/textsize_small" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/activity_vertical_margin"
+                        android:layout_toLeftOf="@+id/btnAsk"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <com.popdq.app.view.textview.TextViewNormal
+                                android:id="@+id/tvNameAnswer"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="marquee"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true"
+                                android:freezesText="true"
+                                android:marqueeRepeatLimit="marquee_forever"
+                                android:maxLength="20"
+                                android:scrollHorizontally="true"
+                                android:singleLine="true"
+                                android:text="Ronajhluiodsvsdvsdloldo"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/textsize_normal"
+                                android:textStyle="bold" />
+
+                            <RelativeLayout
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content">
+                                <ImageView
+                                    android:id="@+id/imgVerified"
+                                    android:layout_width="@dimen/credit_size_small"
+                                    android:layout_height="@dimen/credit_size_small"
+                                    android:layout_marginLeft="@dimen/activity_vertical_margin"
+                                    android:minWidth="@dimen/activity_vertical_margin"
+                                    android:src="@drawable/ic_verified"
+                                    android:visibility="visible" />
+                            </RelativeLayout>
+
+
+                        </LinearLayout>
+
+                        <com.popdq.app.view.textview.TextViewThin
+                            android:id="@+id/tvField"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="marquee"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:freezesText="true"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:maxLines="1"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text="Football"
+                            android:textSize="@dimen/textsize_small_x" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <com.popdq.app.view.textview.TextViewThin
+                    android:id="@+id/tvDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:ellipsize="end"
+                    android:ems="20"
+                    android:scrollHorizontally="true"
+                    android:maxLines="2"
+                    android:text="DESCRIPTION"
+                    android:textColor="@color/text_solved_static"
+                    android:textSize="@dimen/textsize_small" />
+
+                <!--<com.popdq.app.view.textview.TextViewThin-->
+                    <!--android:id="@+id/tvDescription"-->
+                    <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+                    <!--android:layout_marginTop="@dimen/activity_vertical_margin"-->
+                    <!--android:text="DESCRIPTION"-->
+                    <!--android:textColor="@color/text_solved_static"-->
+                    <!--android:textSize="@dimen/textsize_small"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:ellipsize="marquee"-->
+                    <!--android:focusable="true"-->
+                    <!--android:focusableInTouchMode="true"-->
+                    <!--android:freezesText="true"-->
+                    <!--android:marqueeRepeatLimit="marquee_forever"-->
+                    <!--android:maxLines="1"-->
+                    <!--android:scrollHorizontally="true"-->
+                    <!--android:singleLine="true"-->
+
+
+                    />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/layoutAvatar">
+
+                    <com.popdq.app.view.textview.TextViewNormal
+                        android:id="@+id/tvUserDisableAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/user_disable_all"
+                        android:textColor="@color/text_solved_static"
+                        android:textSize="@dimen/textsize_small_x"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/layoutCredit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                        android:layout_marginTop="@dimen/activity_horizontal_margin"
+
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:id="@+id/layoutTextCredit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/activity_vertical_margin"
+                            android:layout_marginRight="@dimen/activity_vertical_margin"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="@dimen/credit_size_small"
+                                android:layout_height="@dimen/credit_size_small"
+                                android:src="@drawable/text" />
+
+                            <com.popdq.app.view.textview.TextViewThin
+                                android:id="@+id/tvCreditText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                                android:maxLines="1"
+                                android:text=""
+                                android:textColor="@color/text_solved_static"
+                                android:textSize="@dimen/textsize_small_x" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutVoiceCredit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/activity_vertical_margin"
+                            android:layout_marginRight="@dimen/activity_vertical_margin"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="@dimen/credit_size_small"
+                                android:layout_height="@dimen/credit_size_small"
+                                android:src="@drawable/voice" />
+
+                            <com.popdq.app.view.textview.TextViewThin
+                                android:id="@+id/tvCreditVoice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                                android:maxLines="1"
+                                android:text=""
+                                android:textColor="@color/text_solved_static"
+                                android:textSize="@dimen/textsize_small_x" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layoutVideoCredit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/activity_vertical_margin"
+                            android:layout_marginRight="@dimen/activity_vertical_margin"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="@dimen/credit_size_small"
+                                android:layout_height="@dimen/credit_size_small"
+                                android:src="@drawable/video" />
+
+                            <com.popdq.app.view.textview.TextViewThin
+                                android:id="@+id/tvCreditVideo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/activity_vertical_margin"
+                                android:maxLines="1"
+                                android:text=""
+                                android:textColor="@color/text_solved_static"
+                                android:textSize="@dimen/textsize_small_x" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

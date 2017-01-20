@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/v_form"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/v_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/azstack_dialog_background"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@color/azstack_app_color"
+            android:gravity="center"
+            android:minHeight="@dimen/azstack_row_dialog_size"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="@string/app_name"
+            android:textColor="@color/azstack_white"
+            android:textSize="18sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:minHeight="@dimen/azstack_row_dialog_size"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="20dp"
+            android:textColor="@color/azstack_black"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:gravity="right|center_vertical"
+            android:minHeight="@dimen/azstack_row_dialog_size" >
+
+            <TextView
+                android:id="@+id/btn_negative"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/azstack_btn_white_rect_selector"
+                android:gravity="center"
+                android:padding="5dp"
+                android:textColor="#009688"
+                android:textSize="@dimen/azstack_text_button" />
+
+            <TextView
+                android:id="@+id/btn_positive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/azstack_btn_white_rect_selector"
+                android:gravity="center"
+                android:padding="5dp"
+                android:textColor="#009688"
+                android:textSize="@dimen/azstack_text_button" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>

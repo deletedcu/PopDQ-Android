@@ -1,0 +1,52 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="padding_editext">8dp</dimen>
+    <dimen name="activity_vertical_margin">8dp</dimen>
+    <dimen name="textsize_bar">20sp</dimen>
+    <dimen name="divider_login_width">60dp</dimen>
+    <dimen name="textsize_login_option">20sp</dimen>
+    <dimen name="height_option">60dp</dimen>
+    <dimen name="width_button_login">240dp</dimen>
+    <dimen name="textsize_buton_login">16sp</dimen>
+    <dimen name="width_status_question">100dp</dimen>
+    <dimen name="width_button_login_input">320dp</dimen>
+    <dimen name="width_button_login_email">150dp</dimen>
+    <dimen name="textsize_no_account">16sp</dimen>
+    <dimen name="height_button_login_input">44dp</dimen>
+    <dimen name="height_option_profile">200dp</dimen>
+    <dimen name="padding_ic_edittext">12dp</dimen>
+    <dimen name="height_search">40dp</dimen>
+    <dimen name="text_size_title_question">18sp</dimen>
+    <dimen name="text_size_menu">17sp</dimen>
+    <dimen name="magrin_menu_text">68dp</dimen>
+    <dimen name="avatar_expert_size">80dp</dimen>
+    <dimen name="textsize_expert_name">20sp</dimen>
+    <dimen name="width_button_ask_list">80dp</dimen>
+    <dimen name="height_button_ask_list">35dp</dimen>
+    <dimen name="height_profile_expert_title">180dp</dimen>
+    <dimen name="height_profile_expert_avatar">140dp</dimen>
+    <dimen name="height_title_ask_form">100dp</dimen>
+    <dimen name="height_form_content_ask">300dp</dimen>
+    <dimen name="height_button_login_email">30dp</dimen>
+    <dimen name="textsize_button_small">12sp</dimen>
+    <dimen name="avatar_list_question">90dp</dimen>
+    <dimen name="avatar_size_detail_question">55dp</dimen>
+    <dimen name="avatar_size_navigation">50dp</dimen>
+    <dimen name="text_size_des_question">14sp</dimen>
+    <dimen name="margin_right_btn_search">18dp</dimen>
+    <dimen name="text_size_button_small">11sp</dimen>
+    <dimen name="heigh_content_input">150dp</dimen>
+    <dimen name="heigh_content_input_text">140dp</dimen>
+    <dimen name="magrin_top_option_name">25dp</dimen>
+    <dimen name="height_button_bottom">50dp</dimen>
+    <dimen name="textsize_normal">14sp</dimen>
+    <dimen name="textsize_small">13sp</dimen>
+    <dimen name="textsize_small_x">11sp</dimen>
+    <dimen name="height_button_bottom_new_design">60dp</dimen>
+    <dimen name="min_size_noti_count">22dp</dimen>
+    <dimen name="avatar_size_user_bottom">45dp</dimen>
+    <dimen name="width_status_question_feed">90dp</dimen>
+
+
+</resources>

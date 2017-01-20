@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_horizontal_margin">
+
+    <com.popdq.app.view.textview.TextViewNormal
+        android:id="@+id/tvNameCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="sdgvdr"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/textsize_normal" />
+
+    <ImageView
+        android:layout_width="@dimen/credit_size_small"
+        android:layout_height="@dimen/credit_size_small"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_next" />
+
+</RelativeLayout>

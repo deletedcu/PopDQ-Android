@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/button_cooking_static">
+
+    <include
+        android:id="@+id/lToolbar"
+        layout="@layout/toolbar_question_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></include>
+
+    <LinearLayout
+        android:id="@+id/content_height"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom"
+        android:layout_below="@+id/lToolbar"
+        android:orientation="vertical"></LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom"
+        android:layout_below="@+id/lToolbar">
+
+        <RelativeLayout
+            android:id="@+id/question"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/layout_content"
+                layout="@layout/title_and_content_detail_question_or_text_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></include>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <include
+        android:id="@+id/bottom"
+        layout="@layout/layout_user_of_question_bottom"></include>
+
+
+</RelativeLayout>

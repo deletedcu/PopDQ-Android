@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/swipe_refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar1"
+        android:orientation="vertical">
+
+
+        <!--<com.azstack.quickanswer.view.textview.TextViewNormal-->
+        <!--android:id="@+id/layoutTitle"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:padding="@dimen/activity_horizontal_margin"-->
+        <!--android:text="@string/featured_users"-->
+        <!--android:textSize="@dimen/text_size_title_question"-->
+        <!--android:textStyle="bold" />-->
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/listExpert"
+                android:layout_width="match_parent"
+
+                android:layout_height="match_parent"
+                android:background="@color/main_login"></android.support.v7.widget.RecyclerView>
+
+            <com.popdq.app.view.textview.TextViewNormal
+                android:id="@+id/tvNodata"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/nodata"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/layout_search"></include>
+    </LinearLayout>
+</FrameLayout> </android.support.v4.widget.SwipeRefreshLayout>

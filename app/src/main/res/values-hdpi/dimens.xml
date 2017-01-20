@@ -1,0 +1,59 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">12dp</dimen>
+    <dimen name="padding_editext">8dp</dimen>
+    <dimen name="activity_vertical_margin">6dp</dimen>
+    <dimen name="textsize_bar">16sp</dimen>
+    <dimen name="divider_login_width">60dp</dimen>
+    <dimen name="textsize_login_option">14sp</dimen>
+    <dimen name="height_option">40dp</dimen>
+    <dimen name="width_button_login">210dp</dimen>
+    <dimen name="textsize_buton_login">11sp</dimen>
+    <dimen name="width_button_login_input">320dp</dimen>
+    <dimen name="width_button_login_email">120dp</dimen>
+    <dimen name="textsize_no_account">12sp</dimen>
+    <dimen name="height_button_login_input">38dp</dimen>
+    <dimen name="height_option_profile">180dp</dimen>
+    <dimen name="padding_ic_edittext">12dp</dimen>
+    <dimen name="height_search">30dp</dimen>
+    <dimen name="text_size_title_question">14sp</dimen>
+    <dimen name="text_size_menu">12sp</dimen>
+    <dimen name="magrin_menu_text">68dp</dimen>
+    <dimen name="avatar_expert_size">80dp</dimen>
+    <dimen name="textsize_expert_name">20sp</dimen>
+    <dimen name="width_button_ask_list">70dp</dimen>
+    <dimen name="height_button_ask_list">35dp</dimen>
+    <dimen name="height_profile_expert_title">160dp</dimen>
+    <dimen name="height_profile_expert_avatar">100dp</dimen>
+    <dimen name="height_title_ask_form">100dp</dimen>
+    <dimen name="height_form_content_ask">300dp</dimen>
+    <dimen name="text_size_des_question">12sp</dimen>
+    <dimen name="avatar_list_question">75dp</dimen>
+    <dimen name="margin_right_btn_search">18dp</dimen>
+    <dimen name="text_size_button_small">11sp</dimen>
+    <dimen name="heigh_content_input">130dp</dimen>
+    <dimen name="heigh_content_input_text">120dp</dimen>
+    <dimen name="width_status_question">90dp</dimen>
+    <dimen name="height_status_question">32dp</dimen>
+    <dimen name="width_btn_ask_item">55dp</dimen>
+    <dimen name="height_btn_ask_item">20dp</dimen>
+    <dimen name="height_button_bottom">40dp</dimen>
+    <dimen name="textsize_large">16sp</dimen>
+    <dimen name="border_avatar">3dp</dimen>
+    <dimen name="textsize_normal">13sp</dimen>
+    <dimen name="textsize_small">11sp</dimen>
+    <dimen name="magrin_top_option_name">25dp</dimen>
+    <dimen name="textsize_small_x">10sp</dimen>
+    <dimen name="height_button_bottom_new_design">50dp</dimen>
+    <dimen name="min_size_noti_count">20dp</dimen>
+    <dimen name="credit_size_small">15dp</dimen>
+
+    <dimen name="size_icon_method_small">18dp</dimen>
+    <dimen name="size_icon_method_normal">22dp</dimen>
+    <dimen name="width_status_question_long">110dp</dimen>
+    <dimen name="avatar_size_user_bottom">45dp</dimen>
+    <dimen name="width_status_question_feed">85dp</dimen>
+    <dimen name="azstack_ng_gs_item_photo_height">120dp</dimen>
+
+
+</resources>

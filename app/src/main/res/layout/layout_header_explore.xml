@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <View
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_search" />
+
+    <LinearLayout
+        android:id="@+id/layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/btnFriendFB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/input_ask"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <com.popdq.app.view.textview.TextViewNormal
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/find_your_facebook_friend"
+                android:textColor="@drawable/text_color_view_all"
+                android:textSize="@dimen/textsize_normal" />
+
+            <ImageView
+                android:layout_width="@dimen/credit_size_small"
+                android:layout_height="@dimen/credit_size_small"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_next" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/divider_menu"></View>
+
+        <RelativeLayout
+            android:id="@+id/btnBrowseCategory"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/input_ask"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <com.popdq.app.view.textview.TextViewNormal
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/browse_by_category"
+                android:textColor="@drawable/text_color_view_all"
+
+                android:textSize="@dimen/textsize_normal" />
+
+            <ImageView
+                android:layout_width="@dimen/credit_size_small"
+                android:layout_height="@dimen/credit_size_small"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_next" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/divider_menu"></View>
+
+        <RelativeLayout
+            android:id="@+id/btnMyView"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/input_ask"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <com.popdq.app.view.textview.TextViewNormal
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/my_view"
+                android:textColor="@drawable/text_color_view_all"
+
+                android:textSize="@dimen/textsize_normal" />
+
+            <ImageView
+                android:layout_width="@dimen/credit_size_small"
+                android:layout_height="@dimen/credit_size_small"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_next" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/divider_menu"></View>
+
+        <RelativeLayout
+            android:id="@+id/btnFollow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/input_ask"
+            android:padding="@dimen/activity_horizontal_margin">
+
+            <com.popdq.app.view.textview.TextViewNormal
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/users_i_follow"
+                android:textColor="@drawable/text_color_view_all"
+
+                android:textSize="@dimen/textsize_normal" />
+
+            <ImageView
+                android:layout_width="@dimen/credit_size_small"
+                android:layout_height="@dimen/credit_size_small"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_next" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <com.popdq.app.view.textview.TextViewNormal
+        android:id="@+id/titleUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_login"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:text="@string/featured_users"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/textsize_normal" />
+</LinearLayout>

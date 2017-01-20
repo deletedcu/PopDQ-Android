@@ -1,0 +1,6 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="50dp"></corners>
+    <solid android:color="@color/button_resend_static"></solid>
+</shape>
+
+

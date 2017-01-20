@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical">
+
+    <include layout="@layout/divider"></include>
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.6"
+            android:id="@+id/id_edit_answer"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+                <com.popdq.app.view.textview.TextViewThin
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/replied_by"
+                    android:textColor="@color/text_in_main"
+                    android:textSize="@dimen/textsize_small"
+                    android:id="@+id/reply_edit" />
+
+                <ImageView
+                    android:layout_width="@dimen/size_icon_method_small"
+                    android:layout_height="@dimen/size_icon_method_small"
+                    android:layout_marginLeft="@dimen/activity_vertical_margin"
+                    android:src="@drawable/ic_pen_black"
+                    android:visibility="gone"
+                    android:id="@+id/imgedit" />
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="@dimen/size_divider"
+            android:layout_height="match_parent"
+            android:background="@color/button_cooking_press"></View>
+
+
+
+        <LinearLayout
+            android:id="@+id/btnViewProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="@dimen/avatar_size_navigation"
+                android:layout_height="@dimen/avatar_size_navigation"
+                android:layout_margin="@dimen/activity_vertical_margin">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgAvatarAnswer"
+                    android:layout_width="@dimen/avatar_size_user_bottom"
+
+                    android:layout_height="@dimen/avatar_size_user_bottom"
+                    android:src="@drawable/question_answer_page_avatar"
+                    app:civ_border_color="@color/border_color"
+                    app:civ_border_width="@dimen/border_avatar" />
+
+                <ImageView
+                    android:id="@+id/imgVerified"
+                    android:layout_width="@dimen/size_icon_method_small"
+                    android:layout_height="@dimen/size_icon_method_small"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_verified"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/icon"
+                android:orientation="vertical">
+
+                <com.popdq.app.view.textview.TextViewBold
+                    android:id="@+id/tvAnswerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/activity_vertical_margin"
+                    android:text=""
+                    android:textColor="@drawable/text_color_view_all"
+                    android:textSize="@dimen/textsize_normal"
+                    android:textStyle="bold" />
+
+                <com.popdq.app.view.textview.TextViewThin
+                    android:id="@+id/tvProfesstion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:freezesText="true"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="@color/text_in_main"
+                    android:textSize="@dimen/textsize_small" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="@dimen/size_divider"
+            android:layout_height="match_parent"
+            android:background="@color/button_cooking_press"></View>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            android:gravity="center">
+
+            <LinearLayout
+                android:id="@+id/notMyQuestion1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <com.popdq.app.view.textview.TextViewThin
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SHARE"
+                    android:textSize="@dimen/textsize_small" />
+
+                <ImageView
+                    android:layout_width="@dimen/size_icon_method_small"
+                    android:layout_height="@dimen/size_icon_method_small"
+                    android:layout_marginLeft="@dimen/activity_vertical_margin"
+                    android:src="@drawable/share_icon" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/isMyQuestion1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.popdq.app.view.textview.TextViewThin
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/users_can_view"
+                    android:textColor="@color/text_solved_static"
+                    android:textSize="@dimen/textsize_small_x" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_weight="1.5"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/icMethod"
+                        android:layout_width="@dimen/size_icon_method_normal"
+                        android:layout_height="@dimen/size_icon_method_normal"
+                        android:src="@drawable/text" />
+
+                    <com.popdq.app.view.textview.TextViewBold
+                        android:id="@+id/tvFee"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="$0.01"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textsize_large" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

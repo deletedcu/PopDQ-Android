@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CreditSpiner">
+        <attr name="hint" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="ItemNavigationMenu">
+        <attr name="icon_menu" format="integer" />
+        <attr name="text" format="string" />
+    </declare-styleable>
+
+    <declare-styleable name="InputForm">
+        <attr name="icon_form" format="integer"></attr>
+        <attr name="hint_form" format="string"></attr>
+
+    </declare-styleable>
+    <declare-styleable name="JustifyTextView">
+        <attr name="text_color" format="color"></attr>
+
+    </declare-styleable>
+
+    <declare-styleable name="CropImageView">
+
+        <attr name="guidelines">
+            <enum name="off" value="0" />
+            <enum name="onTouch" value="1" />
+            <enum name="on" value="2" />
+        </attr>
+
+        <attr name="fixAspectRatio" format="boolean" />
+        <attr name="aspectRatioX" format="integer" />
+        <attr name="aspectRatioY" format="integer" />
+
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#103F47</color>
+    <color name="colorPrimaryDark">#0d343d</color>
+    <color name="colorAccent">#52b148</color>
+
+    <color name="button_resend_static">#103f47</color>
+    <color name="button_resend_press">#0D343D</color>
+
+    <color name="button_login_static">#52B148</color>
+    <color name="button_login_press">#43A047</color>
+
+    <color name="button_login_facebook_static">#3F51B5</color>
+    <color name="button_login_facebook_press">#3F51B5</color>
+
+    <color name="button_login_google_static">#E24C38</color>
+    <color name="button_login_google_press">#E24C38</color>
+
+    <color name="button_help_static">#E24C38</color>
+    <color name="button_help_press">#E53935</color>
+
+    <color name="button_cooking_static">#F8F7F1</color>
+    <color name="button_cooking_press">#DCD9CF</color>
+    <color name="main_login">#EAE9DE</color>
+    <color name="item_question">#F9F8F3</color>
+    <color name="bottom_color">#DCD9CF</color>
+    <color name="text_in_main">#50000000</color>
+    <color name="white">#ffffff</color>
+    <color name="input_ask">#F8F7F1</color>
+    <color name="text_solved_static">#A9A285</color>
+    <color name="text_2">#AFB42B</color>
+    <color name="text_color">#A9A285</color>
+    <color name="border_color">#E0E0E0</color>
+    <color name="divider_menu">#30A9A285</color>
+    <color name="hint_color">#40000000</color>
+
+    <color name="azstack_white">#ffffff</color>
+    <color name="azstack_dark">#666666</color>
+    <color name="azstack_transparent">#00000000</color>
+    <color name="azstack_dark_light">#888888</color>
+    <color name="azstack_app_color">#ff3598DC</color>
+    <color name="azstack_black">#000000</color>
+    <color name="azstack_white_dark">#f9f9f9</color>
+    <color name="azstack_background_app">#e4e8e9</color>
+    <drawable name="ab_bg_black">#99000000</drawable>
+    <color name="text_normal">#ff666666</color>
+    <color name="gray">#e2e2e2</color>
+    <color name="text_button_dialog">#009688</color>
+    <color name="item_selected">#7ccae6</color>
+
+    <color name="white_translucent">#AAFFFFFF</color>
+    <color name="black_translucent">#B0000000</color>
+
+    <color name="border">@color/white_translucent</color>
+    <color name="guideline">@color/white_translucent</color>
+    <color name="corner">@android:color/white</color>
+    <color name="surrounding_area">@color/black_translucent</color>
+    <color name="ic_pop_color">#104048</color>
+
+
+</resources>

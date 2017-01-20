@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/toolbar_with_button"></include>
+
+    <LinearLayout
+        android:id="@+id/des"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar1"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <com.popdq.app.view.textview.TextViewNormal
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/description_buycredit"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/textsize_normal" />
+
+        <com.popdq.app.view.textview.TextViewNormal
+            android:id="@+id/btnFromEarning"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/transfer_underline"
+            android:textColor="@drawable/text_color_view_all"
+
+            android:textSize="@dimen/textsize_normal" />
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom"
+        android:layout_below="@+id/des"></ListView>
+
+    <!--<Button-->
+    <!--android:id="@+id/btnGetListProduct"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_above="@+id/btnFromEarning"-->
+    <!--android:text="Get List Product" />-->
+
+    <!--<Button-->
+    <!--android:id="@+id/btnConsume"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_above="@+id/btnFromEarning"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:text="Consume" />-->
+
+
+    <include
+        android:id="@+id/bottom"
+        layout="@layout/bottom_layout_with_button_new_design"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"></include>
+</RelativeLayout>

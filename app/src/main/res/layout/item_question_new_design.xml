@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:padding="@dimen/activity_vertical_margin"
+        card_view:cardBackgroundColor="@color/item_question"
+        card_view:cardCornerRadius="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.popdq.app.view.textview.TextViewBold
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_vertical_margin"
+                android:text="How do you feel?"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/textsize_normal" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/main_login"></View>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/layoutViews"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/activity_vertical_margin">
+
+                    <com.popdq.app.view.textview.TextViewNormal
+                        android:id="@+id/tvCountViews"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@drawable/text_color_count_view"
+                        android:textSize="@dimen/textsize_small" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/layoutStatus"
+                    android:layout_toRightOf="@+id/layoutViews"
+                    android:gravity="end">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_toLeftOf="@+id/layout_avatar"
+                        android:gravity="end"
+                        android:orientation="vertical">
+
+
+                        <com.popdq.app.view.textview.TextViewNormal
+                            android:id="@+id/tvNameUserAnswer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="marquee"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:freezesText="true"
+                            android:marqueeRepeatLimit="marquee_forever"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:text=""
+                            android:textColor="@drawable/text_color_view_all"
+                            android:textSize="@dimen/textsize_small" />
+                        <com.popdq.app.view.textview.TextViewNormal
+                            android:id="@+id/popBy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:text="@string/pop_to"
+                            android:textColor="@color/text_solved_static"
+                            android:textSize="@dimen/textsize_small_x" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/layout_avatar"
+                        android:layout_width="@dimen/avatar_list_question_small"
+                        android:layout_height="@dimen/avatar_list_question_small"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:padding="@dimen/activity_vertical_margin">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/imgAvatar"
+                            android:layout_width="@dimen/avatar_list_question_small"
+                            android:layout_height="@dimen/avatar_list_question_small"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/avatar" />
+
+                        <ImageView
+                            android:id="@+id/imgVerified"
+                            android:layout_width="@dimen/verify_size_small"
+                            android:layout_height="@dimen/verify_size_small"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/ic_verified" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layoutStatus"
+                    android:layout_width="@dimen/width_status_question"
+                    android:layout_height="@dimen/height_status_question"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/activity_vertical_margin">
+
+                    <!--<ImageView-->
+                    <!--android:id="@+id/imgMethod"-->
+                    <!--android:layout_width="@dimen/width_status_question"-->
+                    <!--android:layout_height="@dimen/height_status_question"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:src="@drawable/ic_text" />-->
+
+                    <LinearLayout
+                        android:id="@+id/layoutView"
+                        android:layout_width="@dimen/width_status_question_feed"
+                        android:layout_height="@dimen/height_status_question"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/bg_status_viewed"
+                        android:gravity="center"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/icMethod"
+                            android:layout_width="@dimen/credit_size_small"
+                            android:layout_height="@dimen/credit_size_small" />
+
+                        <com.popdq.app.view.textview.TextViewNormal
+                            android:id="@+id/tvStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:text=""
+                            android:textColor="@color/text_solved_static"
+                            android:textSize="@dimen/textsize_small" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

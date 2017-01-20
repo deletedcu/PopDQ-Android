@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_login"
+    android:orientation="vertical"
+    tools:context="com.popdq.app.ui.LoginActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/signUp"
+        android:layout_below="@id/toolbar">
+
+
+        <LinearLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/option"
+                layout="@layout/logo_and_option"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></include>
+
+            <com.popdq.app.view.textview.TextViewNormal
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:gravity="center"
+                android:text="@string/description_forget_pass"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/textsize_normal" />
+
+            <EditText
+                android:id="@+id/edtCode"
+                android:layout_width="@dimen/width_button_login"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:background="@drawable/button_login_input"
+                android:gravity="center"
+                android:hint="@string/code"
+                android:inputType="number"
+                android:padding="@dimen/activity_vertical_margin" />
+
+            <LinearLayout
+                android:padding="@dimen/activity_vertical_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btnResend"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_button_login_input"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/padding_editext"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_standard_black"
+                    android:text="@string/resend"
+                    android:textColor="@drawable/text_color_sign_up"
+                    android:textSize="@dimen/textsize_normal"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btnDone"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/height_button_login_input"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/padding_editext"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_standard_green"
+                    android:text="@string/done"
+                    android:textColor="@drawable/text_color_login"
+                    android:textSize="@dimen/textsize_normal"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/button_login_press"></View>
+</RelativeLayout>

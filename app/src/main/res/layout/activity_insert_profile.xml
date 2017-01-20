@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_login">
+
+    <include
+        android:id="@+id/toolbar1"
+        layout="@layout/toolbar"></include>
+
+    <com.popdq.app.view.VerticalScrollview
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom"
+        android:layout_below="@+id/toolbar1"
+        android:layout_marginBottom="@dimen/activity_horizontal_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/avatar"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_profile_expert_title">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/colorPrimary"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"></LinearLayout>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="@dimen/height_profile_expert_avatar"
+                    android:layout_height="@dimen/height_profile_expert_avatar"
+                    android:layout_centerInParent="true">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imgAvatar"
+                        android:layout_width="@dimen/height_profile_expert_avatar"
+                        android:layout_height="@dimen/height_profile_expert_avatar"
+
+                        android:src="@drawable/profile_information_avatar"
+                        app:civ_border_color="@color/border_color"
+                        app:civ_border_width="@dimen/border_avatar" />
+
+                    <ImageView
+                        android:layout_width="@dimen/star_size"
+                        android:layout_height="@dimen/star_size"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="@dimen/activity_horizontal_margin"
+                        android:layout_marginRight="@dimen/activity_horizontal_margin"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:src="@drawable/ic_pen_black" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+
+                android:id="@+id/option"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/avatar"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <com.popdq.app.view.textview.TextViewNormal
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:text="@string/profile_infomation"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/textsize_login_option"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@color/button_cooking_press"></View>
+            </LinearLayout>
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/option"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:background="@drawable/button_login_input"
+                    android:descendantFocusability="beforeDescendants"
+                    android:focusableInTouchMode="true"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_button_login_input"
+                        android:descendantFocusability="beforeDescendants"
+                        android:focusableInTouchMode="true">
+
+
+                        <ImageView
+                            android:layout_width="@dimen/icon_size_input"
+                            android:layout_height="@dimen/icon_size_input"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/padding_ic_edittext"
+                            android:padding="3dp"
+                            android:src="@drawable/name_icon" />
+
+                        <View
+                            android:layout_width="1.5dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/button_cooking_press"></View>
+
+                        <EditText
+                            android:id="@+id/edtUserName"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                            android:layout_marginRight="@dimen/activity_horizontal_margin"
+                            android:background="#00000000"
+                            android:digits="0,1,2,3,4,5,6,7,8,9,*,qwertzuiopasdfghjklyxcvbnm,_,-,."
+                            android:hint="@string/username"
+                            android:imeOptions="actionNext"
+                            android:maxLength="20"
+                            android:maxLines="1"
+                            android:inputType="text"
+                            android:nextFocusForward="@id/edtFirstName"
+                            android:singleLine="true"
+                            android:textSize="@dimen/textsize_normal" />
+                    </LinearLayout>
+                </LinearLayout>
+                InputForm>
+
+                <!--<LinearLayout-->
+
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/height_button_login_input"-->
+                <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginTop="@dimen/activity_horizontal_margin"-->
+                <!--android:background="@drawable/bg_title"-->
+
+                <!--android:descendantFocusability="beforeDescendants"-->
+                <!--android:focusableInTouchMode="true"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:padding="@dimen/padding_ic_edittext"-->
+                <!--android:src="@drawable/name_icon" />-->
+
+                <!--<View-->
+                <!--android:layout_width="2dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginBottom="@dimen/padding_editext"-->
+                <!--android:layout_marginTop="@dimen/padding_editext"-->
+                <!--android:background="@color/button_cooking_press"></View>-->
+
+                <!--<EditText-->
+                <!--android:id="@+id/edtUserName"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginLeft="@dimen/padding_editext"-->
+                <!--android:background="#00000000"-->
+                <!--android:hint="@string/username"-->
+                <!--android:imeOptions="actionNext"-->
+                <!--android:singleLine="true" />-->
+
+
+                <!--</LinearLayout>-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:background="@drawable/button_login_input"
+                    android:descendantFocusability="beforeDescendants"
+                    android:focusableInTouchMode="true"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_button_login_input"
+                        android:descendantFocusability="beforeDescendants"
+                        android:focusableInTouchMode="true">
+
+
+                        <ImageView
+                            android:id="@+id/imgIcon"
+                            android:layout_width="@dimen/icon_size_input"
+                            android:layout_height="@dimen/icon_size_input"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/padding_ic_edittext"
+                            android:padding="3dp"
+                            android:src="@drawable/name_icon" />
+
+                        <View
+                            android:layout_width="1.5dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/button_cooking_press"></View>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <EditText
+                                android:id="@+id/edtFirstName"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+
+
+                                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                android:layout_toLeftOf="@+id/tvOption"
+                                android:background="#00000000"
+                                android:hint="@string/first_name"
+                                android:imeOptions="actionNext"
+                                android:inputType="textCapWords"
+                                android:maxLength="15"
+                                android:maxLines="1"
+                                android:nextFocusForward="@id/edtLastName"
+                                android:singleLine="true"
+                                android:textSize="@dimen/textsize_normal" />
+
+                            <com.popdq.app.view.textview.TextViewNormal
+                                android:id="@+id/tvOption"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                android:text="@string/optional"
+                                android:textColor="@color/text_in_main" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:background="@drawable/button_login_input"
+                    android:descendantFocusability="beforeDescendants"
+                    android:focusableInTouchMode="true"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/height_button_login_input"
+                        android:descendantFocusability="beforeDescendants"
+                        android:focusableInTouchMode="true">
+
+
+                        <ImageView
+                            android:id="@+id/imgIcon2"
+                            android:layout_width="@dimen/icon_size_input"
+                            android:layout_height="@dimen/icon_size_input"
+                            android:layout_gravity="center"
+                            android:layout_margin="@dimen/padding_ic_edittext"
+                            android:padding="3dp"
+                            android:src="@drawable/name_icon" />
+
+                        <View
+                            android:layout_width="1.5dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@color/button_cooking_press"></View>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <EditText
+                                android:id="@+id/edtLastName"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                android:layout_toLeftOf="@+id/tvOption2"
+                                android:background="#00000000"
+                                android:hint="@string/last_name"
+                                android:imeOptions="actionDone"
+                                android:inputType="textCapWords"
+                                android:maxLength="15"
+                                android:maxLines="1"
+                                android:singleLine="true"
+                                android:textSize="@dimen/textsize_normal" />
+
+                            <com.popdq.app.view.textview.TextViewNormal
+                                android:id="@+id/tvOption2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                                android:text="@string/optional"
+                                android:textColor="@color/text_in_main" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+                <!--<LinearLayout-->
+
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/height_button_login_input"-->
+                <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginTop="@dimen/activity_horizontal_margin"-->
+                <!--android:background="@drawable/bg_title"-->
+
+                <!--android:descendantFocusability="beforeDescendants"-->
+                <!--android:focusableInTouchMode="true"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:padding="@dimen/padding_ic_edittext"-->
+                <!--android:src="@drawable/name_icon" />-->
+
+                <!--<View-->
+                <!--android:layout_width="2dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginBottom="@dimen/padding_editext"-->
+                <!--android:layout_marginTop="@dimen/padding_editext"-->
+                <!--android:background="@color/button_cooking_press"></View>-->
+
+                <!--<EditText-->
+                <!--android:id="@+id/edtFirstName"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginLeft="@dimen/padding_editext"-->
+                <!--android:background="#00000000"-->
+                <!--android:hint="@string/first_name"-->
+                <!--android:imeOptions="actionNext"-->
+                <!--android:singleLine="true" />-->
+
+
+                <!--</LinearLayout>-->
+
+                <!--<LinearLayout-->
+
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/height_button_login_input"-->
+                <!--android:layout_marginLeft="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginRight="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginTop="@dimen/activity_horizontal_margin"-->
+                <!--android:background="@drawable/bg_title"-->
+
+                <!--android:descendantFocusability="beforeDescendants"-->
+                <!--android:focusableInTouchMode="true"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:padding="@dimen/padding_ic_edittext"-->
+                <!--android:src="@drawable/name_icon" />-->
+
+                <!--<View-->
+                <!--android:layout_width="2dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginBottom="@dimen/padding_editext"-->
+                <!--android:layout_marginTop="@dimen/padding_editext"-->
+                <!--android:background="@color/button_cooking_press"></View>-->
+
+                <!--<EditText-->
+                <!--android:id="@+id/edtLastName"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginLeft="@dimen/padding_editext"-->
+                <!--android:background="#00000000"-->
+                <!--android:hint="@string/last_name"-->
+                <!--android:imeOptions="actionNext"-->
+                <!--android:singleLine="true" />-->
+
+
+                <!--</LinearLayout>-->
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/activity_horizontal_margin"
+                    android:visibility="gone">
+
+                    <com.popdq.app.view.textview.TextViewNormal
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/anonymous_mode"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/textsize_no_account" />
+
+                    <CheckBox
+                        android:id="@+id/status_anonymous"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:button="@drawable/btn_checkbox" />
+                </RelativeLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.popdq.app.view.VerticalScrollview>
+
+    <RelativeLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="visible">
+
+        <include
+            layout="@layout/bottom_layout_with_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></include>
+    </RelativeLayout>
+
+    <ViewStub
+        android:id="@+id/v_stub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/picture_option_dialog" />
+
+</RelativeLayout>

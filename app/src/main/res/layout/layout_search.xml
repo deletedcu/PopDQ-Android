@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutSearchBar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/main_login"
+    android:gravity="center">
+
+    <com.popdq.app.view.textview.TextViewNormal
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/height_search"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:text="CANCEL"
+        android:textColor="@drawable/text_color_view_all"
+        android:textSize="@dimen/textsize_small"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_search"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:layout_toLeftOf="@+id/btnCancel"
+        android:background="@drawable/bg_search"
+        android:descendantFocusability="beforeDescendants"
+        android:focusableInTouchMode="true">
+
+        <EditText
+
+            android:id="@+id/edtSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/activity_vertical_margin"
+            android:layout_toLeftOf="@+id/search"
+            android:background="#00000000"
+            android:hint="@string/search"
+            android:imeOptions="actionSearch"
+            android:imeActionLabel="Search"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColorHint="@color/hint_color"
+            android:textSize="@dimen/textsize_normal" />
+
+        <LinearLayout
+            android:id="@+id/search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/ic_search"
+                android:layout_width="@dimen/icon_search"
+                android:layout_height="@dimen/icon_search"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:src="@drawable/search_icon" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
