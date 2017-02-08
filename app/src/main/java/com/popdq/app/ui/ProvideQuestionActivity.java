@@ -208,7 +208,7 @@ public class ProvideQuestionActivity extends BaseSearchActivity implements View.
         language_spoken = bundle.getString(Values.language_written, "All");
 
         avatar = bundle.getString(Values.avatar, "");
-        professional_field = bundle.getString(Values.professional_field, "No information");
+        professional_field = bundle.getString(Values.professional_field, " ");
         name = bundle.getString(Values.name, "");
 
         textCredit = bundle.getFloat(Values.text_credit);

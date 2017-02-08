@@ -100,6 +100,7 @@ public class FeedFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+//        this.adapter = new QuestionFeedAdapter(getContext());
         user = User.getInstance(getActivity());
         token = PreferenceUtil.getInstancePreference(getActivity()).getString(Values.TOKEN, "");
         broadcastReceiver = new BroadcastReceiver() {
@@ -218,12 +219,13 @@ public class FeedFragment extends Fragment {
         edtSearch.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
+//                adapter.edit_search(keyword);
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 keyword = edtSearch.getText().toString();
+                adapter.edit_search(keyword);
                 timer.cancel();
                 timer = new Timer();
                 timer.schedule(
@@ -425,7 +427,18 @@ public class FeedFragment extends Fragment {
     public void onResume() {
         super.onResume();
         setHeightSpace();
+//        edtSearch = (EditText) view.findViewById(R.id.edtSearch);
+
+       try{
+           adapter.edit_search(edtSearch.getText().toString());
+       } catch (NullPointerException e){
+           e.printStackTrace();
+       }
     }
+
+//    public String edit_search(){
+//        return edtSearch.getText().toString();
+//    }
 
     public void setHeightSpace() {
         layout_header.post(new Runnable() {

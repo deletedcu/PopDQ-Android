@@ -227,13 +227,13 @@ public class UserProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                     ((TextViewNormal) header.findViewById(R.id.tvProfesstion)).setSelected(true);
 
                     if (professtion == null || professtion.equals("")) {
-                        ((TextViewNormal) header.findViewById(R.id.tvProfesstion)).setText("No information");
+                        ((TextViewNormal) header.findViewById(R.id.tvProfesstion)).setText(" ");
                     } else {
                         ((TextViewNormal) header.findViewById(R.id.tvProfesstion)).setText(user.getCategoriesString() + "");
                     }
                     String location = user.getAddress();
                     if (location == null || location.equals("")) {
-                        ((TextViewNormal) header.findViewById(R.id.tvLocation)).setText("No information");
+                        ((TextViewNormal) header.findViewById(R.id.tvLocation)).setText(" ");
                     } else {
                         ((TextViewNormal) header.findViewById(R.id.tvLocation)).setText(user.getAddress() + "");
                     }
@@ -274,7 +274,7 @@ public class UserProfileAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
 
                     }
                     if (user.getDescription().equals("")) {
-                        tvDescription.setText("No information");
+                        tvDescription.setText(" ");
 
                     } else tvDescription.setText(user.getDescription() + "");
 

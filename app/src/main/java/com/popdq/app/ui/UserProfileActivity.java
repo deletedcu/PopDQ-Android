@@ -133,13 +133,13 @@ public class UserProfileActivity extends BaseActivity implements View.OnClickLis
 //                    Log.e("PROFESSION",professtion);
 
                     if (professtion == null || professtion.equals("")) {
-                        ((TextViewNormal) findViewById(R.id.tvProfesstion)).setText("No information");
+                        ((TextViewNormal) findViewById(R.id.tvProfesstion)).setText(" ");
                     } else {
                         ((TextViewNormal) findViewById(R.id.tvProfesstion)).setText(user.getProfessional_field());
                     }
                     String location = user.getAddress();
                     if (location == null || location.equals("")) {
-                        ((TextViewNormal) findViewById(R.id.tvLocation)).setText("No information");
+                        ((TextViewNormal) findViewById(R.id.tvLocation)).setText(" ");
                     } else {
                         ((TextViewNormal) findViewById(R.id.tvLocation)).setText(user.getAddress() + "");
                     }
@@ -186,7 +186,7 @@ public class UserProfileActivity extends BaseActivity implements View.OnClickLis
 
 //
 //                    if (user.getDescription().equals("")) {
-//                        tvDescription.setText("No information");
+//                        tvDescription.setText(" ");
 //
 //                    } else
                     tvDescription.setText(user.getDescription() + "");

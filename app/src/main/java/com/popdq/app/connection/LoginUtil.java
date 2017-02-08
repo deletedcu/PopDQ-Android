@@ -1,6 +1,7 @@
 package com.popdq.app.connection;
 
 import android.app.Activity;
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -64,93 +65,186 @@ public class LoginUtil {
             JSONObject jsonObject = new JSONObject(reponse);
             int code = jsonObject.getInt("r");
             if (jsonObject.has("isNew")) {
-                if (jsonObject.getInt("isNew") == 1) {
+
+                int isnew = jsonObject.getInt("isNew");
+
+                if (isnew == 1) {
+                    VolleyUtils.getUserAndPushPreference(activity, reponse);
+                    String userS = PreferenceUtil.getInstancePreference(activity).getString(Values.user, "");
+                    user = new Gson().fromJson(userS, User.class);
+
+                    Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
+                    NotificationCompat.Builder mBuilder =
+                            new NotificationCompat.Builder(activity)
+                                    .setSmallIcon(R.mipmap.ic_launcher)
+                                    .setContentTitle(activity.getString(R.string.noti_wellcome_title))
+                                    .setContentText(activity.getString(R.string.noti_wellcome_des))
+                                    .setAutoCancel(true)
+                                    .setSound(defaultSoundUri);
+
+
+                    NotificationManager mNotificationManager = (NotificationManager) activity.getSystemService(Context.NOTIFICATION_SERVICE);
+
+                    mNotificationManager.notify(1, mBuilder.build());
+
+                    try {
+                        MixpanelAPI.getInstance(activity, Values.PROJECT_TOKEN_MIXPANEL).getPeople().identify(user.getUsername());
+                    } catch (Exception e) {
+
+                    }
+                    LocalBroadcastManager.getInstance(activity).sendBroadcast(new Intent("login"));
+                    VolleyUtils.getUserAndPushPreference(activity, reponse);
+                    if (user.getUsername() == null || user.getUsername().equals("")) {
+                        Intent intent = new Intent(activity, InsertProfileActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        activity.startActivity(intent);
+                        activity.finish();
+                        return;
+                    }
+
+                    new AsyncTask<Void, Void, Void>() {
+
+                        @Override
+                        protected Void doInBackground(Void... voids) {
+                            String token = "";
+                            InstanceID instanceID = InstanceID.getInstance(activity);
+                            try {
+
+                                token = instanceID.getToken(activity.getString(R.string.sender_id),
+                                        GoogleCloudMessaging.INSTANCE_ID_SCOPE, null);
+                                Log.e(TAG, "token: " + token);
+                                final String finalToken = token;
+                                MixPanelUtil.registerPushMixpanel(activity);
+                                PushNotificationUtil.registerPush(activity, PreferenceUtil.getToken(activity), token, activity.getPackageName(), new VolleyUtils.OnRequestListenner() {
+                                    @Override
+                                    public void onSussces(String response, Result result) {
+                                        Log.e(TAG, "registerpush: " + response);
+                                        PreferenceUtil.getInstanceEditor(activity).putString(Values.token_push, finalToken);
+                                        PreferenceUtil.getInstanceEditor(activity).commit();
+                                    }
+
+                                    @Override
+                                    public void onError(String error) {
+
+                                    }
+                                });
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            return null;
+                        }
+
+                        @Override
+                        protected void onPostExecute(Void aVoid) {
+                            super.onPostExecute(aVoid);
+                        }
+                    }.execute();
+//                    activity.startActivity(new Intent(activity, MainActivity.class));
+//                    activity.finish();
+                    pushnotifregis(activity);
+
+
+
+                    Intent intent = new Intent(activity, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    activity.startActivity(intent);
+                    activity.finish();
+
+                } else {
+                    Log.e("isNew", "Not isNew = 0");
 
                     VolleyUtils.getUserAndPushPreference(activity, reponse);
                     String userS = PreferenceUtil.getInstancePreference(activity).getString(Values.user, "");
                     user = new Gson().fromJson(userS, User.class);
 
+//                    Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+//
+//                    NotificationCompat.Builder mBuilder =
+//                            new NotificationCompat.Builder(activity)
+//                                    .setSmallIcon(R.mipmap.ic_launcher)
+//                                    .setContentTitle(activity.getString(R.string.noti_wellcome_title))
+//                                    .setContentText(activity.getString(R.string.noti_wellcome_des))
+//                                    .setAutoCancel(true)
+//                                    .setSound(defaultSoundUri);
+//
+//
+//                    NotificationManager mNotificationManager = (NotificationManager) activity.getSystemService(Context.NOTIFICATION_SERVICE);
+//
+//                    mNotificationManager.notify(1, mBuilder.build());
 
-                    VolleyUtils volleyUtils = new VolleyUtils(activity, Values.URL_PUSH_NOTIFICATION);
-                    volleyUtils.addParam(Values.TOKEN, PreferenceUtil.getInstancePreference(activity).getString(Values.TOKEN, ""));
-                    volleyUtils.setOnRequestComplete(new VolleyUtils.OnRequestListenner() {
+                    try {
+                        MixpanelAPI.getInstance(activity, Values.PROJECT_TOKEN_MIXPANEL).getPeople().identify(user.getUsername());
+                    } catch (Exception e) {
+
+                    }
+                    LocalBroadcastManager.getInstance(activity).sendBroadcast(new Intent("login"));
+                    VolleyUtils.getUserAndPushPreference(activity, reponse);
+                    if (user.getUsername() == null || user.getUsername().equals("")) {
+                        Intent intent = new Intent(activity, InsertProfileActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        activity.startActivity(intent);
+                        activity.finish();
+                        return;
+                    }
+
+                    new AsyncTask<Void, Void, Void>() {
+
                         @Override
-                        public void onSussces(String response, Result result) {
+                        protected Void doInBackground(Void... voids) {
+                            String token = "";
+                            InstanceID instanceID = InstanceID.getInstance(activity);
+                            try {
 
-                            if (VolleyUtils.requestSusscess(response)) {
+                                token = instanceID.getToken(activity.getString(R.string.sender_id),
+                                        GoogleCloudMessaging.INSTANCE_ID_SCOPE, null);
+                                Log.e(TAG, "token: " + token);
+                                final String finalToken = token;
+                                MixPanelUtil.registerPushMixpanel(activity);
+                                PushNotificationUtil.registerPush(activity, PreferenceUtil.getToken(activity), token, activity.getPackageName(), new VolleyUtils.OnRequestListenner() {
+                                    @Override
+                                    public void onSussces(String response, Result result) {
+                                        Log.e(TAG, "registerpush: " + response);
+                                        PreferenceUtil.getInstanceEditor(activity).putString(Values.token_push, finalToken);
+                                        PreferenceUtil.getInstanceEditor(activity).commit();
+                                    }
 
-                                try {
-                                    MixpanelAPI mixpanelAPI = MixpanelAPI.getInstance(activity, Values.PROJECT_TOKEN_MIXPANEL);
-                                    MixpanelAPI.getInstance(activity, Values.PROJECT_TOKEN_MIXPANEL).alias(userName, mixpanelAPI.getDistinctId());
-                                } catch (Exception e) {
+                                    @Override
+                                    public void onError(String error) {
 
-                                }
-//
-//                                NotificationUtil.sendNotification(activity, activity.getString(R.string.noti_wellcome_title),
-//                                        activity.getString(R.string.noti_wellcome_des), activity.getClass());
-//
-
-                                Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-                                NotificationCompat.Builder builder =
-                                        new NotificationCompat.Builder(activity)
-                                .setSmallIcon(R.mipmap.ic_launcher)
-                                        .setContentTitle(activity.getString(R.string.noti_wellcome_title))
-                                        .setContentText(activity.getString(R.string.noti_wellcome_des))
-                                        .setAutoCancel(true)
-                                        .setSound(defaultSoundUri);
-
-                                Intent notificationIntent = new Intent(activity, MainActivity.class);
-                                PendingIntent contentIntent = PendingIntent.getActivity(activity, 0, notificationIntent,
-                                        PendingIntent.FLAG_UPDATE_CURRENT);
-                                builder.setContentIntent(contentIntent);
-
-                                // Add as notification
-                                NotificationManager manager = (NotificationManager) activity.getSystemService(Context.NOTIFICATION_SERVICE);
-                                manager.notify(0, builder.build());
-
-
-                                Intent intent = new Intent(activity, MainActivity.class);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                                activity.startActivity(intent);
-                                activity.finish();
+                                    }
+                                });
+                            } catch (IOException e) {
+                                e.printStackTrace();
                             }
-
+                            return null;
                         }
 
                         @Override
-                        public void onError(String error) {
-
+                        protected void onPostExecute(Void aVoid) {
+                            super.onPostExecute(aVoid);
                         }
-                    });
-                    volleyUtils.query();
+                    }.execute();
+//                    activity.startActivity(new Intent(activity, MainActivity.class));
+//                    activity.finish();
+//                    pushnotifregis(activity);
 
 
+
+                    Intent intent = new Intent(activity, MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    activity.startActivity(intent);
+                    activity.finish();
 
                 }
-            }
 
+            } else if (code == 0) {
 
-            if (code == 0) {
                 User user = new Gson().fromJson(jsonObject.getString("user"), User.class);
-
-//                if(user.getCategories() != null){
-//                    for (int i=0;i<user.getCategories().size();i++){
-//
-//                        Log.e("USER LOGIN CATEGORY", user.getCategories().get(i).getName());
-//                        Log.e("USER LOGIN CATEGORY", String.valueOf(user.getCategories()));
-                        Log.e("USER LOGIN CATEGORY", String.valueOf(user.getIdCategoriesArr()));
-//                PreferenceUtil.getInstanceEditor(activity).putString(Values.category_id, user.getIdCategoriesArr());
-//                PreferenceUtil.getInstanceEditor(activity).commit();
-//                        Log.e("USER LOGIN CATEGORY", String.valueOf(user.getRealCategory()));
-//                        Log.e("USER LOGIN CATEGORY", String.valueOf(user.getCategoriesString()));
-//                        Log.e("USER LOGIN CHECK", user.getName());
-//                    }
-//                } else {
-//                    Log.e("USER LOGIN CATEGORY", "KOSONG COY");
-//                    Log.e("USER LOGIN CHECK", user.getName());
-//                }
-
 
                 try {
                     MixpanelAPI.getInstance(activity, Values.PROJECT_TOKEN_MIXPANEL).getPeople().identify(user.getUsername());
@@ -218,6 +312,25 @@ public class LoginUtil {
         }
     }
 
+    private static void pushnotifregis(Activity activity) {
+
+        VolleyUtils volleyUtils = new VolleyUtils(activity, Values.URL_PUSH_NOTIFICATION);
+        volleyUtils.addParam(Values.TOKEN, PreferenceUtil.getInstancePreference(activity).getString(Values.TOKEN, ""));
+        volleyUtils.setOnRequestComplete(new VolleyUtils.OnRequestListenner() {
+            @Override
+            public void onSussces(String response, Result result) {
+
+
+            }
+
+            @Override
+            public void onError(String error) {
+
+            }
+        });
+        volleyUtils.query();
+
+    }
 
 
     public static void logOut(Context context, GoogleApiClient mGoogleApiClient) {

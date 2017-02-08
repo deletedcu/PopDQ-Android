@@ -218,7 +218,7 @@
                             android:marqueeRepeatLimit="marquee_forever"
                             android:scrollHorizontally="true"
                             android:singleLine="true"
-                            android:text="No information"
+                            android:text=" "
                             android:textColor="@color/text_solved_static"
                             android:textSize="@dimen/textsize_normal" />
 
@@ -236,7 +236,7 @@
                             android:marqueeRepeatLimit="marquee_forever"
                             android:scrollHorizontally="true"
                             android:singleLine="true"
-                            android:text="No information"
+                            android:text=" "
                             android:textColor="@color/text_solved_static"
                             android:textSize="@dimen/textsize_normal" />
 
@@ -249,7 +249,7 @@
                         android:paddingLeft="@dimen/activity_horizontal_margin"
                         android:paddingRight="@dimen/activity_horizontal_margin"
                         android:scrollbars="vertical"
-                        android:text="No information"
+                        android:text=" "
                         android:textColor="@color/colorPrimary"
                         android:textSize="@dimen/textsize_normal" />
                 </LinearLayout>

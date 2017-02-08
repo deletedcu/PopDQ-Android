@@ -250,7 +250,7 @@ public class ViewAnswerTextActivity extends BaseActivity implements View.OnClick
                     ((TextViewThin) findViewById(R.id.tvDate)).setText(date);
                     String professional = answer.getUser().getCategoriesString();
                     if (professional == null || professional.length() <= 0) {
-                        professional = "No information";
+                        professional = " ";
                     }
                     ((TextViewThin) findViewById(R.id.tvProfesstion)).setSelected(true);
                     ((TextViewThin) findViewById(R.id.tvProfesstion)).setText(professional);

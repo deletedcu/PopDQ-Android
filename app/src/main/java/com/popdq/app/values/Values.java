@@ -33,6 +33,8 @@ public class Values {
     public static final String address = "address";
     public static final String isViewed = "isViewed";
 
+    public static final String search = "search";
+
 
     public static final String category = "category";
     public static final String newExpertCategory = "newExpertCategory";
@@ -86,8 +88,8 @@ public class Values {
     public static final String BASE_URL = "http://apiv2.popdq.com/api";
     public static final String BASE_URL_AVATAR = "http://apiv2.popdq.com/";
 
-//    public static final String BASE_URL = "http://52.221.10.148/api";
-//    public static final String BASE_URL_AVATAR = "http://52.221.10.148/";
+//    public static final String BASE_URL = "http://52.221.10.148:8000/api";
+//    public static final String BASE_URL_AVATAR = "http://52.221.10.148:8000/";
 
     public static final String URL_USER_SEARCH = BASE_URL + "/user/searchAll";
     public static final String URL_USER_MY_PROFILE = BASE_URL + "/user/myProfile";

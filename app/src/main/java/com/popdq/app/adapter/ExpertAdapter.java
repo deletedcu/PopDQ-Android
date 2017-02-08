@@ -104,7 +104,7 @@ public class ExpertAdapter extends RecyclerView.Adapter<ExpertAdapter.ViewHolder
         holder.tvName.setText(name);
 
         if (user.getCategoriesString() == null || user.getCategoriesString().equals("")) {
-            holder.tvField.setText("No information");
+            holder.tvField.setText(" ");
         } else {
             holder.tvField.setText(user.getCategoriesString());
         }
@@ -114,7 +114,7 @@ public class ExpertAdapter extends RecyclerView.Adapter<ExpertAdapter.ViewHolder
             holder.imgVerified.setVisibility(View.GONE);
         }
         if (user.getDescription() == null || user.getDescription().equals("")) {
-            holder.tvDescription.setText("No information");
+            holder.tvDescription.setText(" ");
         } else {
             holder.tvDescription.setText(user.getDescription());
         }

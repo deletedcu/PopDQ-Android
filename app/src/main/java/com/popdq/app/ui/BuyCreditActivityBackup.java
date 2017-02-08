@@ -56,7 +56,7 @@ public class BuyCreditActivityBackup extends BaseActivity implements View.OnClic
     IabHelper mHelper;
     static final String ITEM_SKU = "android.test.purchased";
 
-//    public String PRODUCTS_ID[] = new String[]{"com.azstack.item1", "com.azstack.item2", "com.azstack.item3", "com.azstack.item4", "com.azstack.item6", "com.azstack.item5"};
+//    public String PRODUCTS_ID[] = nopew String[]{"com.azstack.item1", "com.azstack.item2", "com.azstack.item3", "com.azstack.item4", "com.azstack.item6", "com.azstack.item5"};
 //    public String PRODUCTS_ID[] = new String[]{"android.test.purchased", "android.test.canceled", "android.test.refunded", "android.test.item_unavailable", ITEM_SKU};
 
     IabHelper.OnIabPurchaseFinishedListener mPurchaseFinishedListener = new IabHelper.OnIabPurchaseFinishedListener() {
@@ -80,7 +80,7 @@ public class BuyCreditActivityBackup extends BaseActivity implements View.OnClic
 //    IabHelper.QueryInventoryFinishedListener mReceivedInventoryListener
 //            = new IabHelper.QueryInventoryFinishedListener() {
 //        public void onQueryInventoryFinished(IabResult result,
-//                                             Inventory inventory) {
+//               \\\\\\\\\\\                              Inventory inventory) {
 //            Toast.makeText(BuyCreditActivityBackup.this, "onQueryInventoryFinished " + result.toString(), Toast.LENGTH_SHORT).show();
 //
 //            if (result.isFailure()) {
@@ -175,6 +175,7 @@ public class BuyCreditActivityBackup extends BaseActivity implements View.OnClic
         receipt_dataModel.dataSignature = signatureData;
         String r = receipt_dataModel.toString();
         Log.e("Buy credits:", "requesting to my server");
+        Log.e("Log to server", r);
 
         CreditUtils.verify(this, token, r, new VolleyUtils.OnRequestListenner() {
             @Override
@@ -375,7 +376,9 @@ public class BuyCreditActivityBackup extends BaseActivity implements View.OnClic
             case R.id.btnBottom:
 //                Toast.makeText(BuyCreditActivityBackup.this, credits.get(selectedPosition).cost + "", Toast.LENGTH_SHORT).show();
                 try {
-                    mHelper.launchPurchaseFlow(BuyCreditActivityBackup.this, credits.get(selectedPosition).getName(), 1001,
+//                    mHelper.launchPurchaseFlow(BuyCreditActivityBackup.this, credits.get(selectedPosition).getName(), 1001,
+//                            mPurchaseFinishedListener);
+                    mHelper.launchPurchaseFlow(BuyCreditActivityBackup.this,  credits.get(selectedPosition).getName(), 1001,
                             mPurchaseFinishedListener);
                 } catch (IabHelper.IabAsyncInProgressException e) {
                     e.printStackTrace();

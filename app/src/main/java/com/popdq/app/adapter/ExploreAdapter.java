@@ -240,7 +240,7 @@ public class ExploreAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             }
 
             if (user.getDescription() == null || user.getDescription().equals("") ) {
-                holderItem.tvDescription.setText("No information");
+                holderItem.tvDescription.setText(" ");
             } else {
                 holderItem.tvDescription.setText(user.getDescription());
             }

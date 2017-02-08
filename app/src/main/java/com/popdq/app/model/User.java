@@ -259,7 +259,7 @@ public class User {
     public String getLanguage_answer() {
 
 //        if (language_answer.equals("")) {
-//            return "No information";
+//            return " ";
 //        }
         return language_answer;
     }
@@ -291,7 +291,7 @@ public class User {
     public String getName() {
         String name = firstname + " " + lastname;
 //        if (name.equals(" ")) {
-//            return "No information";
+//            return " ";
 //        }
         return name;
 
@@ -375,7 +375,7 @@ public class User {
 
     public String getDescription() {
 //        if (description.equals("")) {
-//            return "No information";
+//            return " ";
 //        }
         return description;
     }
@@ -391,7 +391,7 @@ public class User {
 
     public String getAddress() {
 //        if (address.equals("")) {
-//            return "No information";
+//            return " ";
 //        }
 
         return address;
@@ -432,7 +432,7 @@ public class User {
     public String getProfessional_field() {
 
 //        if (professional_field.equals("")) {
-//            return "No information";
+//            return " ";
 //        }
         return professional_field;
     }

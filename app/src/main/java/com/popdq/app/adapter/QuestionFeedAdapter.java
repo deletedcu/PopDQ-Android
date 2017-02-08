@@ -1,6 +1,7 @@
 package com.popdq.app.adapter;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.renderscript.Sampler;
 import android.support.v7.widget.CardView;
@@ -16,6 +17,7 @@ import com.bumptech.glide.Glide;
 import com.popdq.app.R;
 import com.popdq.app.connection.UserUtil;
 import com.popdq.app.connection.VolleyUtils;
+import com.popdq.app.fragment.FeedFragment;
 import com.popdq.app.interfaces.OnItemClickListener;
 import com.popdq.app.model.Question;
 import com.popdq.app.model.Result;
@@ -59,6 +61,7 @@ public class QuestionFeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     private String textResult;
     private String keyword;
     private String verify;
+    private String edit_search;
     private long myId;
 
 //    private int colorTextHelp, colorTextSolved;
@@ -122,11 +125,15 @@ public class QuestionFeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 //            }
 //
 //            final String finalVerified = verify;
+//            mAdapterCallback.edit_search();
             btnViewAll.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     MixPanelUtil.trackViewAll(context);
+//                    Toast.makeText(context, edit_search, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(context, AskExpertActivity.class);
+                    intent.putExtra(Values.search, edit_search);
+                    intent.putExtra(Values.keyword, "");
                     if(textUser.getVisibility() == View.GONE) {
                         intent.putExtra(Values.verified, true);
                     } else {
@@ -137,6 +144,21 @@ public class QuestionFeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             });
         }
     }
+
+
+//    private AdapterCallback mAdapterCallback;
+//
+//    public QuestionFeedAdapter(Context context) {
+//        try {
+//            this.mAdapterCallback = ((AdapterCallback) context);
+//        } catch (ClassCastException e) {
+//            throw new ClassCastException("Activity must implement AdapterCallback.");
+//        }
+//    }
+//
+//    public interface AdapterCallback {
+//        void edit_search();
+//    }
 
     public void setHeaderSpaceHeight(int height) {
         if (headerHolder != null && headerHolder.view_space != null) {
@@ -358,6 +380,10 @@ public class QuestionFeedAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             });
         }
 
+    }
+
+    public String edit_search(final String search) {
+        return edit_search = search;
     }
 
     public void searchUser(final String name) {

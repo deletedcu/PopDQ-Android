@@ -46,6 +46,7 @@ public class AskExpertActivity extends BaseSearchActivity {
     private boolean isSearChFbFriend = false;
     private static int PAGE_LOAD;
     private String idCategory = "";
+    private String search = "";
     private SwipeRefreshLayout swipeRefreshLayout;
 
 
@@ -53,6 +54,8 @@ public class AskExpertActivity extends BaseSearchActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ask_expert);
+
+//        search = getIntent().getStringExtra(Values.search);
 
         PAGE_LOAD = 0;
         if (getIntent().hasExtra(Values.verified)) {
@@ -98,6 +101,7 @@ public class AskExpertActivity extends BaseSearchActivity {
         edtSearch.setTypeface(MyApplication.getInstanceTypeNormal(this));
         tvNodata = (TextViewNormal) findViewById(R.id.tvNodata);
         edtSearch.setHint(getString(R.string.hint_search_users));
+//        edtSearch.setText(search);
         token = PreferenceUtil.getToken(this);
 //        Utils.setActionEnterSearch(this, edtSearch);
 
@@ -120,6 +124,8 @@ public class AskExpertActivity extends BaseSearchActivity {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+
+
             }
 
             @Override
@@ -141,8 +147,14 @@ public class AskExpertActivity extends BaseSearchActivity {
 
             }
         });
-        if (getIntent().hasExtra(Values.keyword)) {
-            keyword = getIntent().getStringExtra(Values.keyword);
+
+//        if (getIntent().hasExtra(Values.keyword)) {
+//            keyword = getIntent().getStringExtra(Values.keyword);
+//            edtSearch.setText(keyword);
+//        }
+
+        if (getIntent().hasExtra(Values.search)) {
+            keyword = getIntent().getStringExtra(Values.search);
             edtSearch.setText(keyword);
         }
         swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh_layout);

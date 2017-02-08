@@ -23,7 +23,7 @@ android {
         applicationId "com.popdq.app"
         minSdkVersion 16
         targetSdkVersion 25
-        versionCode 21
+        versionCode 22
         versionName "1.1.1"
 
 //        versionCode 19
@@ -102,7 +102,7 @@ dependencies {
     compile 'com.mixpanel.android:mixpanel-android:4.9.3'
     compile 'com.google.android.gms:play-services-analytics:9.4.0'
 //    compile 'com.afollestad:material-camera:0.4.4'
-    compile('com.crashlytics.sdk.android:crashlytics:2.6.5@aar') {
+    compile('com.crashlytics.sdk.android:crashlytics:2.6.6@aar') {
         transitive = true;
     }
     compile('com.crashlytics.sdk.android:crashlytics-ndk:1.1.2@aar') {

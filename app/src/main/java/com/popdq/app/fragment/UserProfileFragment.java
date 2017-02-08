@@ -194,13 +194,13 @@ public class UserProfileFragment extends Fragment implements View.OnClickListene
             ((TextViewNormal) view.findViewById(R.id.tvProfesstion)).setSelected(true);
 
             if (professtion == null || professtion.equals("")) {
-                ((TextViewNormal) view.findViewById(R.id.tvProfesstion)).setText("No information");
+                ((TextViewNormal) view.findViewById(R.id.tvProfesstion)).setText(" ");
             } else {
                 ((TextViewNormal) view.findViewById(R.id.tvProfesstion)).setText(user.getProfessional_field());
             }
             String location = user.getAddress();
 //            if (location == null || location.equals("")) {
-//                ((TextViewNormal) view.findViewById(R.id.tvLocation)).setText("No information");
+//                ((TextViewNormal) view.findViewById(R.id.tvLocation)).setText(" ");
 //            } else {
             ((TextViewNormal) view.findViewById(R.id.tvLocation)).setText(user.getAddress() + "");
 //            }
@@ -247,7 +247,7 @@ public class UserProfileFragment extends Fragment implements View.OnClickListene
             }
 
 //            if (user.getDescription().equals("")) {
-//                tvDescription.setText("No information");
+//                tvDescription.setText(" ");
 //
 //            } else
             tvDescription.setText(user.getDescription() + "");

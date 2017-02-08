@@ -110,7 +110,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
             holder.imgVerified.setVisibility(View.GONE);
         }
 //        if (user.getDescription().equals("")) {
-//            holder.tvDescription.setText("No information");
+//            holder.tvDescription.setText(" ");
 //        } else
         holder.tvDescription.setText(user.getDescription());
 //        try {

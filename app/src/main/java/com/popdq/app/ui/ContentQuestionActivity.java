@@ -343,7 +343,7 @@ public class ContentQuestionActivity extends BaseSearchActivity implements View.
 
                     String professional = question.getUser_answer().getCategoriesString();
                     if (professional == null || professional.length() <= 0) {
-                        professional = "No information";
+                        professional = " ";
                     }
                     ((TextViewThin) findViewById(R.id.tvProfesstion)).setSelected(true);
                     ((TextViewThin) findViewById(R.id.tvProfesstion)).setText(professional);

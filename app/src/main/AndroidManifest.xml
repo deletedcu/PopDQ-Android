@@ -316,8 +316,8 @@
 
             <intent-filter android:autoVerify="true">
                 <data android:scheme="popdq" android:host="open" />
-                <data android:scheme="https" android:host="kwqu.app.link" />
-                <data android:scheme="http" android:host="kwqu.app.link" />
+                <data android:scheme="https" android:host="popdq.app.link" />
+                <data android:scheme="http" android:host="popdq.app.link" />
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
