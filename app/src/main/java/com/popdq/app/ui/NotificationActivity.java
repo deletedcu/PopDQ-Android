@@ -163,6 +163,8 @@ public class NotificationActivity extends BaseActivity implements OnItemClickLis
     public void onClick(int position) {
         Question question = notificationAdapter.getNotifications().get(position).getContent().getQuestion();
         int type = notificationAdapter.getNotifications().get(position).getType();
+//        Toast.makeText(this,String.valueOf(notificationAdapter.getNotifications().get(position).getId()),Toast.LENGTH_LONG).show();
+
 //        if (question.getMethod() == 2) {
 //            if (ContextCompat.checkSelfPermission(this,
 //                    Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
@@ -200,6 +202,7 @@ public class NotificationActivity extends BaseActivity implements OnItemClickLis
                 intent.putExtra(Values.NOTIFICATION_ID, notificationAdapter.getNotifications().get(position).getId());
                 notificationAdapter.getNotifications().get(position).setIs_read(1);
                 notificationAdapter.notifyDataSetChanged();
+
 
             }
             startActivity(intent);

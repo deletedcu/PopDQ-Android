@@ -36,6 +36,7 @@ import java.util.List;
 public class FileUtil {
     public static String getPathBitmapCompressed(Bitmap bitmap) {
 
+        try {
         bitmap = Bitmap.createScaledBitmap(bitmap, bitmap.getWidth(), bitmap.getHeight(), false);
         ByteArrayOutputStream bytes = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 50, bytes);
@@ -43,19 +44,19 @@ public class FileUtil {
         File folder = new File(Environment.getExternalStorageDirectory()
                 + "/azpop/temp/");
         if (!folder.exists()) {
-            folder.mkdir();
+            folder.mkdirs();
         }
 
         File f = new File(Environment.getExternalStorageDirectory()
                 + "/azpop/temp/" + fileName + ".jpg");
-        try {
+
             f.createNewFile();
             FileOutputStream fo = new FileOutputStream(f);
             fo.write(bytes.toByteArray());
             fo.close();
             return f.getPath();
 
-        } catch (IOException e) {
+        } catch (IOException | NullPointerException e) {
             e.printStackTrace();
         }
         return null;
@@ -107,6 +108,7 @@ public class FileUtil {
         }
         for (FileModel fileModel : fileModels) {
             builder.addPart("attachments[]", new FileBody(new File(fileModel.getPath())));
+            Log.e("send file", fileModel.getPath());
         }
         builder.addPart("attachments_info", new StringBody(a, Charset.forName(HTTP.UTF_8)));
 //        builder.addPart("attachments[]", new FileBody(file));

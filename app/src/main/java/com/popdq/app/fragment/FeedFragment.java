@@ -225,7 +225,13 @@ public class FeedFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 keyword = edtSearch.getText().toString();
-                adapter.edit_search(keyword);
+
+                if(keyword == null || keyword.equals("")){
+                    adapter.edit_search("");
+                } else{
+                    adapter.edit_search(keyword);
+                }
+
                 timer.cancel();
                 timer = new Timer();
                 timer.schedule(

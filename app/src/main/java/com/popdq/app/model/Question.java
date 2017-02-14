@@ -3,7 +3,7 @@ package com.popdq.app.model;
 /**
  * Created by Dang Luu on 06/07/2016.
  */
-public class Question {
+public class  Question {
 
     private long id;
     private long category_id;
@@ -247,5 +247,28 @@ public class Question {
     public class Attachments {
         public String link;
         public FileModel info;
+
+        public String getLink() {
+            return link;
+        }
+
+        public void setLink(String link) {
+            this.link = link;
+        }
+
+
+        public FileModel getInfo() {
+            return info;
+        }
+
+        public void setInfo(FileModel info) {
+            this.info = info;
+        }
+
+        @Override
+        public String toString() {
+            return "[info = " + getInfo() + ", link = " + getLink() + "]";
+        }
+
     }
 }

@@ -24,6 +24,7 @@ import com.popdq.app.connection.AnswerUtil;
 import com.popdq.app.connection.UserUtil;
 import com.popdq.app.connection.VolleyUtils;
 import com.popdq.app.model.Answer;
+import com.popdq.app.model.FileModel;
 import com.popdq.app.model.Question;
 import com.popdq.app.model.Result;
 import com.popdq.app.model.User;
@@ -36,7 +37,10 @@ import com.popdq.app.view.textview.TextViewBold;
 import com.popdq.app.view.textview.TextViewNormal;
 import com.popdq.app.view.textview.TextViewThin;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -63,6 +67,8 @@ public class ViewAnswerTextActivity extends BaseActivity implements View.OnClick
     private ShareDialog shareDialog;
     private TextViewThin reply_edit;
     private User user;
+    protected List<FileModel> fileModels = new ArrayList<>();
+
 
 
     @Override
@@ -215,7 +221,21 @@ public class ViewAnswerTextActivity extends BaseActivity implements View.OnClick
                                 i.putExtra(Values.answer_id,answer.getId());
                                 i.putExtra(Values.answer_content,answer.getContent());
 
-                                Log.e("extras","extra_qid : "+question_id+"answer_id : "+answer.getId());
+                                ArrayList<String> myList = new ArrayList<>();
+//                                for (Question.Attachments fileModel : answer.getAttachments()) {
+//                                    Log.e("LOG FILE MODELS",fileModel.getInfo().getPath());
+//                                    myList.add(fileModel.getInfo().getPath());
+//                                }
+
+
+                                for (int ij = 0; ij < answer.getAttachments().length; ij++) {
+
+                                    Log.e("LOG FILE MODELS",answer.getAttachments()[ij].link);
+                                    myList.add(Values.BASE_URL_AVATAR+answer.getAttachments()[ij].link);
+
+                                }
+
+                                i.putExtra("mylist", myList);
 
                                 startActivity(i);
 

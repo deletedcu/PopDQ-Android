@@ -185,7 +185,20 @@ public class NotificationAdapter extends RecyclerView.Adapter {
                 notificationHolder.tvDescription.setText("$" + question.getCredit_hold() + " - " +question.getTitle());
                 break;
             case 16:
+                notificationHolder.setUserName(userPartner.getDisplayName());
+                notificationHolder.imgIconMethod.setVisibility(View.GONE);
+
+//                notificationHolder.tvUserName.setText("");
+                notificationHolder.tvAction.setText(context.getString(R.string.followed));
+                notificationHolder.tvDescription.setVisibility(View.GONE);
+                break;
             case 17:
+                Utils.setNotiIconShow(context, question.getMethod(), notificationHolder.imgIconMethod);
+                notificationHolder.setUserName(userPartner.getDisplayName());
+//                notificationHolder.tvUserName.setText(userPartner.getDisplayName());
+                notificationHolder.tvAction.setText(context.getString(R.string.noti_item_has_answer));
+                notificationHolder.tvDescription.setText("$" + question.getCredit_hold() + " - "+question.getTitle());
+                break;
             case 18:
             case 19:
                 notificationHolder.imgIconMethod.setVisibility(View.GONE);

@@ -24,6 +24,8 @@ import com.popdq.app.values.Values;
 import com.popdq.app.view.DialogBase;
 import com.popdq.app.view.textview.TextViewNormal;
 
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,6 +43,7 @@ public class BaseProvideAnswerActivity extends BaseActivity {
     protected String answer_content;
     protected Button btnBottom;
     protected long answer_id;
+    ArrayList<String> myList = new ArrayList<>();
 
     protected boolean hasContent() {
         return true;
@@ -59,8 +62,9 @@ public class BaseProvideAnswerActivity extends BaseActivity {
             title = getIntent().getExtras().getString(Values.title);
             answer_id = getIntent().getExtras().getLong(Values.answer_id,0);
             answer_content = getIntent().getExtras().getString(Values.answer_content);
+            myList = (ArrayList<String>) getIntent().getSerializableExtra("mylist");
         }catch (Exception e){
-
+        e.printStackTrace();
         }
 
     }
@@ -127,7 +131,6 @@ public class BaseProvideAnswerActivity extends BaseActivity {
                             Toast.makeText(BaseProvideAnswerActivity.this, getString(R.string.reply_success), Toast.LENGTH_SHORT).show();
                             User newUserInfo = VolleyUtils.getUserInfo(response);
                             User.changeCreditAndPutPrefernce(BaseProvideAnswerActivity.this, newUserInfo.getCredit_earnings(), newUserInfo.getCredit());
-//                            showDialogShare();
 
                             Intent intent1 = new Intent("update_interest");
                             LocalBroadcastManager.getInstance(BaseProvideAnswerActivity.this).sendBroadcast(intent1);
@@ -182,7 +185,9 @@ public class BaseProvideAnswerActivity extends BaseActivity {
                 super.onPostExecute(response);
                 progressDialog.dismiss();
 
-                AnswerUtil.update(BaseProvideAnswerActivity.this, token, question_id, content, answer_id, response, method, language_written, language_spoken, new VolleyUtils.OnRequestListenner() {
+                Log.e("Answer UPDATE ATT",response);
+
+;                AnswerUtil.update(BaseProvideAnswerActivity.this, token, question_id, content, answer_id, response, method, language_written, language_spoken, new VolleyUtils.OnRequestListenner() {
                     @Override
                     public void onSussces(String response, Result result) {
                         if (result.getCode() == 0) {

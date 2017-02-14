@@ -101,6 +101,8 @@
     <string name="select_voice_price">Select per voice reply</string>
     <string name="select_video_price">Select per video reply</string>
 
+
+    <string name="followed">has followed you</string>
     <string name="per_text_price">per text reply</string>
     <string name="per_voice_price">per voice reply</string>
     <string name="per_video_price">per video reply</string>
@@ -221,7 +223,8 @@
     <string name="text_price_upper">TEXT PRICE</string>
     <string name="voice_price_upper">VOICE PRICE</string>
     <string name="video_price_upper">VIDEO PRICE</string>
-    <string name="description_login">Pop Questions to Experts, get on-the-go Answers</string>
+    <!--<string name="description_login">Pop Questions to Experts, get on-the-go Answers</string>-->
+    <string name="description_login">Get Personalized Answers from Experts</string>
     <string name="optional">Optional</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -463,5 +466,7 @@
     <string name="privacy_policy">Privacy Policy</string>
     <string name="title_friend">FRIENDS VIA FACEBOOK</string>
     <string name="new_password">New Password</string>
+
+    <string name="user_followed">%s followed you!</string>
 
 </resources>

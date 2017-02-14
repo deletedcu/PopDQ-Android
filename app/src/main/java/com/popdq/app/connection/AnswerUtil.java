@@ -47,7 +47,14 @@ public class AnswerUtil {
         volleyUtils.addParam(Values.TOKEN, token);
         volleyUtils.addParam(Values.answer_id, answer_id + "");
         volleyUtils.addParam(Values.content, content);
-        volleyUtils.addParam(Values.attachments_arr, attachments);
+        if(attachments == null || attachments.equals("")||attachments.equals(" ") || attachments.isEmpty()
+                || attachments.length() == 0 ){
+
+            volleyUtils.addParam(Values.attachments_arr, "[]");
+        } else {
+
+            volleyUtils.addParam(Values.attachments_arr, attachments);
+        }
         volleyUtils.addParam(Values.method, method + "");
         volleyUtils.addParam(Values.language_written, language_written);
         volleyUtils.addParam(Values.language_spoken, language_spoken);

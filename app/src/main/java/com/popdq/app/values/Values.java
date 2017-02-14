@@ -91,6 +91,9 @@ public class Values {
 //    public static final String BASE_URL = "http://52.221.10.148:8000/api";
 //    public static final String BASE_URL_AVATAR = "http://52.221.10.148:8000/";
 
+//    public static final String BASE_URL = "http://52.221.10.148/api";
+//    public static final String BASE_URL_AVATAR = "http://52.221.10.148/";
+
     public static final String URL_USER_SEARCH = BASE_URL + "/user/searchAll";
     public static final String URL_USER_MY_PROFILE = BASE_URL + "/user/myProfile";
     public static final String URL_USER_LOGIN_WITH_GOOGLE = BASE_URL + "/user/loginWithGoogle";

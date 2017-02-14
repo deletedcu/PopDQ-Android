@@ -10,16 +10,22 @@ import android.os.Bundle;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
+import android.view.View;
 
 import com.google.android.gms.gcm.GcmListenerService;
 import com.google.gson.Gson;
 import com.popdq.app.MainActivity;
 import com.popdq.app.R;
+import com.popdq.app.connection.VolleyUtils;
 import com.popdq.app.model.Question;
+import com.popdq.app.model.Result;
 import com.popdq.app.model.User;
 import com.popdq.app.util.NotificationUtil;
 import com.popdq.app.util.PreferenceUtil;
 import com.popdq.app.values.Values;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.Random;
 
@@ -68,6 +74,8 @@ public class MyGcmListenerService extends GcmListenerService {
             LocalBroadcastManager.getInstance(this).sendBroadcast(intent1);
 
             sendNotification(dataReceiveModel);
+            getCountUnread();
+
         }
 /// /        if (from.startsWith("/topics/")) {
 //            // message received from some topic.
@@ -89,8 +97,37 @@ public class MyGcmListenerService extends GcmListenerService {
          */
         // [END_EXCLUDE]
     }
-    // [END receive_message]
 
+    public void getCountUnread() {
+        NotificationUtil.getCountUnread(getApplicationContext(), PreferenceUtil.getToken(getApplicationContext()), new VolleyUtils.OnRequestListenner() {
+            @Override
+            public void onSussces(String response, Result result) {
+                int count = 0;
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    count = jsonObject.getInt("total");
+                    Intent intent = new Intent("update_unread_has_count");
+                    intent.putExtra(Values.COUNT_NOTIFICATION, count);
+                    LocalBroadcastManager.getInstance(getApplicationContext()).sendBroadcast(intent);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+//                if (count <= 0) {
+//                    tvCountNoti.setVisibility(View.GONE);
+//                } else {
+//                    tvCountNoti.setText(count + "");
+//                    tvCountNoti.setVisibility(View.VISIBLE);
+//                }
+            }
+
+            @Override
+            public void onError(String error) {
+
+            }
+        });
+        // [END receive_message]
+    }
 
     private void sendNotification(DataReceiveModel dataReceiveModel) {
         try {
@@ -104,43 +141,13 @@ public class MyGcmListenerService extends GcmListenerService {
             int type = dataReceiveModel.data.type;
             if (dataReceiveModel.data.type == 1) {
                 notificationBuilder.setContentText(getString(R.string.noti_got_question));
-                try {
-                    Intent intent = new Intent("change_user");
-                    LocalBroadcastManager.getInstance(this).sendBroadcast(intent);
-                } catch (Exception e) {
-
-                }
-//                intent = new Intent(this, ContentQuestionActivity.class);
-//                intent.putExtra(Values.question_id, dataReceiveModel.data.question.getId());
             } else if (dataReceiveModel.data.type == 2) {
                 notificationBuilder.setContentText(String.format(getString(R.string.noti_has_been_answed), dataReceiveModel.data.from.getDisplayName()));
                 Question question = dataReceiveModel.data.question;
-
-//                int method = question.getMethod();
-//                if (method == 1) {
-//                    intent = new Intent(this, ViewAnswerTextActivity.class);
-//                } else if (method == 2) {
-//                    intent = new Intent(this, ViewAnswerVoiceRecordActivity.class);
-//                } else if (method == 3) {
-//                    intent = new Intent(this, ViewAnswerVideoActivity.class);
-//                }
-//                intent.putExtra(Values.question_id, question.getId());
-//                intent.putExtra(Values.method, question.getMethod());
-//                intent.putExtra(Values.title, question.getTitle());
             } else if (dataReceiveModel.data.type == 3) {
                 User.changeCreditAndPutPrefernce(this, dataReceiveModel.data.credit_earnings, dataReceiveModel.data.credit);
                 notificationBuilder.setContentText(dataReceiveModel.data.from.getDisplayName() + " " + getString(R.string.noti_item_view_your_question));
                 Question question = dataReceiveModel.data.question;
-//                int method = question.getMethod();
-//                if (method == 1) {
-//                    intent = new Intent(this, ViewAnswerTextActivity.class);
-//                } else if (method == 2) {
-//                    intent = new Intent(this, ViewAnswerVoiceRecordActivity.class);
-//                } else if (method == 3) {
-//                    intent = new Intent(this, ViewAnswerVideoActivity.class);
-//                }
-//                intent.putExtra(Values.question_id, question.getId());
-//                intent.putExtra(Values.title, question.getTitle());
             } else if (dataReceiveModel.data.type == 4) {
                 User.changeCreditAndPutPrefernce(this, dataReceiveModel.data.credit_earnings, dataReceiveModel.data.credit);
                 notificationBuilder.setContentText(String.format(getString(R.string.noti_item_has_been_rejected), dataReceiveModel.data.from.getDisplayName()));
@@ -166,7 +173,13 @@ public class MyGcmListenerService extends GcmListenerService {
             } else if (dataReceiveModel.data.type == 14) {
 //                intent = new Intent(this, MyAnswerActivity.class);
                 notificationBuilder.setContentText(String.format(getString(R.string.noti_has_been_expried_in_hour), dataReceiveModel.data.from.getDisplayName()));
-            } else if (type == 16 || type == 17 || type == 18 || type == 19) {
+            } else if (dataReceiveModel.data.type == 16) {
+//                intent = new Intent(this, MyAnswerActivity.class);
+                notificationBuilder.setContentText(String.format(getString(R.string.user_followed), dataReceiveModel.data.from.getUsername()));
+            } else if (dataReceiveModel.data.type == 17) {
+//                intent = new Intent(this, MyAnswerActivity.class);
+                notificationBuilder.setContentText(String.format(getString(R.string.noti_follow_answer), dataReceiveModel.data.from.getUsername()));
+            } else if (type == 18 || type == 19) {
                 notificationBuilder.setContentText(dataReceiveModel.aps.alert);
             }
 

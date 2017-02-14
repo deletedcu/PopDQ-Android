@@ -197,8 +197,19 @@ public class NotificationUtil {
                 intent = new Intent(context, UserProfileActivity.class);
                 intent.putExtra(Values.experts_id, user.getId());
                 break;
-            case 17://to feed
-                intent = new Intent(context, MainActivity.class);
+            case 17://to following question
+//                intent = new Intent(context, MainActivity.class);
+                method = question.getMethod();
+                if (method == 1) {
+                    intent = new Intent(context, ViewAnswerTextActivity.class);
+                } else if (method == 2) {
+                    intent = new Intent(context, ViewAnswerVoiceRecordActivity.class);
+                } else if (method == 3) {
+                    intent = new Intent(context, ViewAnswerVideoActivity.class);
+                }
+                intent.putExtra(Values.question_id, question.getId());
+                intent.putExtra(Values.method, question.getMethod());
+                intent.putExtra(Values.title, question.getTitle());
 
                 break;
             case 18: //to a specific question's page
